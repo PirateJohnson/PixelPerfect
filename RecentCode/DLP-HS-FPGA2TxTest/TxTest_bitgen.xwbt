@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2TxTest\TxTest.ncd
+OUTFILE=C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2TxTest\TxTest.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s400a-5ft256
+WORKINGDIR=C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2TxTest
+LICENSE=WebPack
+USER_INFO=209396080_0_0_232

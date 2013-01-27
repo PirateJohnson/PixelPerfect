@@ -1,0 +1,7 @@
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\About.baml
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\Device.baml
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\About.g.cs
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\Device.g.cs
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\App.g.cs
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Release\SSLAR2 Viewer_MarkupCompile.cache

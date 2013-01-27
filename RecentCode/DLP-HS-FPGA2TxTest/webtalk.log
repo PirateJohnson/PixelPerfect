@@ -1,0 +1,16 @@
+Release 13.4 - WebTalk (O.87xd)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Project Information
+--------------------
+ProjectID=7CF2739F9C8B41279EF4506AE2C01FA4
+ProjectIteration=30
+
+WebTalk Summary
+----------------
+INFO:WebTalk:1 - WebTalk is enabled because you are using a WebPACK license.
+
+INFO:WebTalk:8 - WebTalk Install setting is ON.
+INFO:WebTalk:6 - WebTalk User setting is ON.
+
+INFO:WebTalk:4 - C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/usage_statistics_webtalk.html WebTalk report has been successfully sent to Xilinx on 2013-01-22T07:29:15.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/13.4/ISE_DS/ISE/data/reports/webtalk_introduction.html

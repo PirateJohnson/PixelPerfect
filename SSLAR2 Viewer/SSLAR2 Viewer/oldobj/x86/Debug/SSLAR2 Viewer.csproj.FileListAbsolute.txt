@@ -1,0 +1,19 @@
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\bin\Debug\SSLAR2 Viewer.exe
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\bin\Debug\SSLAR2 Viewer.pdb
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\MainWindow.baml
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\MainWindow.g.cs
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\App.g.cs
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\SSLAR2 Viewer_MarkupCompile.cache
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\SSLAR2 Viewer.g.resources
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\SSLAR2_Viewer.Properties.Resources.resources
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\SSLAR2 Viewer.exe
+c:\users\john sandmeyer\documents\visual studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\SSLAR2 Viewer.pdb
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\bin\Debug\FTD2XX_NET.dll
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\bin\Debug\FTD2XX_NET.xml
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\Device.baml
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\Device.g.cs
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\About.baml
+C:\Users\John Sandmeyer\Documents\Visual Studio 2010\Projects\SSLAR2 Viewer\SSLAR2 Viewer\obj\x86\Debug\About.g.cs

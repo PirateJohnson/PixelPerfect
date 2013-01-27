@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map O.87xd on Wed Jan 23 14:10:00 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "ftdi_data<0>" LOCATE = SITE "T4" LEVEL 1;
+COMP "ftdi_data<1>" LOCATE = SITE "R5" LEVEL 1;
+COMP "ftdi_data<2>" LOCATE = SITE "T5" LEVEL 1;
+COMP "ftdi_data<3>" LOCATE = SITE "T6" LEVEL 1;
+COMP "ftdi_data<4>" LOCATE = SITE "N7" LEVEL 1;
+COMP "ftdi_data<5>" LOCATE = SITE "P6" LEVEL 1;
+COMP "ftdi_data<6>" LOCATE = SITE "P7" LEVEL 1;
+COMP "ftdi_data<7>" LOCATE = SITE "N8" LEVEL 1;
+COMP "rd" LOCATE = SITE "P8" LEVEL 1;
+COMP "wr" LOCATE = SITE "T8" LEVEL 1;
+COMP "clk" LOCATE = SITE "R9" LEVEL 1;
+COMP "rxf" LOCATE = SITE "P9" LEVEL 1;
+COMP "rst" LOCATE = SITE "F3" LEVEL 1;
+COMP "txe" LOCATE = SITE "N9" LEVEL 1;
+COMP "rx_ce" LOCATE = SITE "P1" LEVEL 1;
+COMP "rx_miso" LOCATE = SITE "T9" LEVEL 1;
+COMP "rx_mosi" LOCATE = SITE "D11" LEVEL 1;
+COMP "rx_csn" LOCATE = SITE "C13" LEVEL 1;
+COMP "rx_sck" LOCATE = SITE "N2" LEVEL 1;
+SCHEMATIC END;
+

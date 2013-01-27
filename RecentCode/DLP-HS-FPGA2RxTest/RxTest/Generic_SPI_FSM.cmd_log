@@ -1,0 +1,1 @@
+vhdtdtfi -prj RxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/Generic_SPI_FSM.vhi" -module Generic_SPI_FSM -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Generic_SPI_FSM.vhd 

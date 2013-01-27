@@ -1,0 +1,5 @@
+vhdl work "Generic_SPI_FSM.vhd"
+vhdl work "rx_driver.vhd"
+vhdl work "packet_cntl.vhd"
+vhdl work "ftdi_driver.vhd"
+vhdl work "RxTest.vhd"

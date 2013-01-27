@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/xst"
+elaborate
+-ifn Generic_SPI_FSM.prj
+-ifmt mixed

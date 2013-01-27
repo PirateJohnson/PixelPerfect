@@ -1,0 +1,1 @@
+vhdtdtfi -prj DLP-HS-FPGA2TxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/pointer_control.vhi" -module pointer_control -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work pointer_control.vhd 

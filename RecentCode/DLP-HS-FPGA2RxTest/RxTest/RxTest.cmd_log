@@ -1,0 +1,169 @@
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol high -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol high -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 
+xst -intstyle ise -ifn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.xst" -ofn "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rxtest.ucf -p xc3s400a-ft256-5 "RxTest.ngc" RxTest.ngd  
+map -intstyle ise -p xc3s400a-ft256-5 -cm area -ir off -pr off -c 100 -o RxTest_map.ncd RxTest.ngd RxTest.pcf 
+par -w -intstyle ise -ol std -t 1 RxTest_map.ncd RxTest.ncd RxTest.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RxTest.twx RxTest.ncd -o RxTest.twr RxTest.pcf -ucf rxtest.ucf 
+bitgen -intstyle ise -f RxTest.ut RxTest.ncd 

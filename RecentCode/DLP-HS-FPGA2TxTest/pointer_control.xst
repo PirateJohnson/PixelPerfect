@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/xst"
+elaborate
+-ifn pointer_control.prj
+-ifmt mixed

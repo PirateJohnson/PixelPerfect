@@ -1,0 +1,37 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/Generic_SPI_FSM.vhd" in Library work.
+Architecture behavioral of Entity generic_spi_fsm is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/rx_driver.vhd" in Library work.
+Entity <rx_driver> compiled.
+ERROR:HDLParsers:851 - "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/rx_driver.vhd" Line 150. Formal CS_enable of Generic_SPI_FSM with no default value must be associated with an actual value.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> 
+
+Total memory usage is 220680 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

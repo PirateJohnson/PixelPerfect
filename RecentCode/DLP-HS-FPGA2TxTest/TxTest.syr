@@ -1,0 +1,1130 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: TxTest.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TxTest.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TxTest"
+Output Format                      : NGC
+Target Device                      : xc3s400a-5-ft256
+
+---- Source Options
+Top Module Name                    : TxTest
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/Generic_SPI_FSM.vhd" in Library work.
+Architecture behavioral of Entity generic_spi_fsm is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/tx_module.vhd" in Library work.
+Architecture behavioral of Entity tx_module is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/packet_control.vhd" in Library work.
+Entity <packet_control> compiled.
+Entity <packet_control> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/pointer_control.vhd" in Library work.
+Architecture behavioral of Entity pointer_control is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/ftdi_driver.vhd" in Library work.
+Architecture behavioral of Entity ftdi_driver is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/fifo_reader.vhd" in Library work.
+Architecture behavioral of Entity fifo_reader is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/ipcore_dir/fifo.vhd" in Library work.
+Architecture fifo_a of Entity fifo is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/fifo_writer.vhd" in Library work.
+Architecture behavioral of Entity fifo_writer is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/TxTest.vhd" in Library work.
+Architecture behavioral of Entity txtest is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <TxTest> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <tx_module> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <packet_control> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <pointer_control> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ftdi_driver> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fifo_reader> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fifo_writer> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Generic_SPI_FSM> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <TxTest> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2211 - "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/TxTest.vhd" line 296: Instantiating black box module <fifo>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF8> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF9> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF10> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF11> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF12> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF13> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF14> in unit <TxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF15> in unit <TxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF15> in unit <TxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF15> in unit <TxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF15> in unit <TxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF15> in unit <TxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF15> in unit <TxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF15> in unit <TxTest>.
+Entity <TxTest> analyzed. Unit <TxTest> generated.
+
+Analyzing Entity <tx_module> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <ce_high> in unit <tx_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_CONFIG> in unit <tx_module> has a constant value of 00001010 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_EN_AA> in unit <tx_module> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_EN_RXADDR> in unit <tx_module> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_SETUP_AW> in unit <tx_module> has a constant value of 00000011 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_SETUP_RETR> in unit <tx_module> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RF_CH> in unit <tx_module> has a constant value of 00000010 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RF_SETUP> in unit <tx_module> has a constant value of 00001000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_STATUS> in unit <tx_module> has a constant value of 11110000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_TX_ADDR> in unit <tx_module> has a constant value of 1101111010101101101111101110111111111111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RX_ADDR_P0> in unit <tx_module> has a constant value of 1101111010101101101111101110111111111111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RX_PW_P0> in unit <tx_module> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <spi_dir> in unit <tx_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <enable_ce> in unit <tx_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rd_en> in unit <tx_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <CS_override> in unit <tx_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <cnt_en> in unit <tx_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <cnt_rst> in unit <tx_module> has a constant value of 1 during circuit operation. The register is replaced by logic.
+Entity <tx_module> analyzed. Unit <tx_module> generated.
+
+Analyzing Entity <Generic_SPI_FSM> in library <work> (Architecture <behavioral>).
+Entity <Generic_SPI_FSM> analyzed. Unit <Generic_SPI_FSM> generated.
+
+Analyzing Entity <packet_control> in library <work> (Architecture <behavioral>).
+Entity <packet_control> analyzed. Unit <packet_control> generated.
+
+Analyzing Entity <pointer_control> in library <work> (Architecture <behavioral>).
+Entity <pointer_control> analyzed. Unit <pointer_control> generated.
+
+Analyzing Entity <ftdi_driver> in library <work> (Architecture <behavioral>).
+Entity <ftdi_driver> analyzed. Unit <ftdi_driver> generated.
+
+Analyzing Entity <fifo_reader> in library <work> (Architecture <behavioral>).
+Entity <fifo_reader> analyzed. Unit <fifo_reader> generated.
+
+Analyzing Entity <fifo_writer> in library <work> (Architecture <behavioral>).
+Entity <fifo_writer> analyzed. Unit <fifo_writer> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <cnt> in unit <tx_module> has a constant value of 0000000000 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <packet_control>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/packet_control.vhd".
+WARNING:Xst:647 - Input <frame_data<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found finite state machine <FSM_0> for signal <pl_cnt>.
+    -----------------------------------------------------------------------
+    | States             | 42                                             |
+    | Transitions        | 169                                            |
+    | Inputs             | 4                                              |
+    | Outputs            | 42                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000000                                         |
+    | Power Up State     | 000000                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <req_data>.
+    Found 1-bit register for signal <inc_ptr>.
+    Found 1-bit register for signal <tx_go>.
+    Found 15-bit register for signal <da_cnt>.
+    Found 15-bit adder for signal <da_cnt$addsub0000> created at line 96.
+    Found 256-bit register for signal <pl_reg>.
+    Found 5-bit register for signal <pstate>.
+    Found 5-bit adder for signal <pstate$addsub0000> created at line 255.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <pl_reg>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 279 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <packet_control> synthesized.
+
+
+Synthesizing Unit <pointer_control>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/pointer_control.vhd".
+    Found 8-bit up counter for signal <col_ptr>.
+    Found 8-bit up counter for signal <row_ptr>.
+    Summary:
+	inferred   2 Counter(s).
+Unit <pointer_control> synthesized.
+
+
+Synthesizing Unit <ftdi_driver>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/ftdi_driver.vhd".
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <rd>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <wr>.
+    Found 8-bit register for signal <ftdi_dout>.
+    Found 3-bit register for signal <dbg>.
+    Found 8-bit register for signal <int_data>.
+    Found 1-bit register for signal <int_dir>.
+    Found 5-bit register for signal <ustate>.
+    Found 5-bit adder for signal <ustate$addsub0000> created at line 140.
+    Summary:
+	inferred  29 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ftdi_driver> synthesized.
+
+
+Synthesizing Unit <fifo_reader>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/fifo_reader.vhd".
+    Found finite state machine <FSM_1> for signal <rstate>.
+    -----------------------------------------------------------------------
+    | States             | 21                                             |
+    | Transitions        | 23                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 22                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000000                                         |
+    | Power Up State     | 000000                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <data_available>.
+    Found 1-bit register for signal <rd_en>.
+    Found 8-bit register for signal <fifo_dout>.
+    Found 1-bit register for signal <rd_clk>.
+    Found 1-bit register for signal <data_sent>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  12 D-type flip-flop(s).
+Unit <fifo_reader> synthesized.
+
+
+Synthesizing Unit <fifo_writer>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/fifo_writer.vhd".
+WARNING:Xst:647 - Input <fifo_full> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found finite state machine <FSM_2> for signal <wfs>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 11                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <din>.
+    Found 1-bit register for signal <write_fifo_busy>.
+    Found 1-bit register for signal <wr_en>.
+    Found 1-bit register for signal <wr_clk>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  11 D-type flip-flop(s).
+Unit <fifo_writer> synthesized.
+
+
+Synthesizing Unit <Generic_SPI_FSM>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/Generic_SPI_FSM.vhd".
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <SCL>.
+    Found 8-bit register for signal <Dout>.
+    Found 1-bit register for signal <CS>.
+    Found 5-bit up counter for signal <cw_cnt>.
+    Found 1-bit register for signal <cw_cnt_en>.
+    Found 1-bit register for signal <int_CS_Enable>.
+    Found 1-bit register for signal <int_dir>.
+    Found 1-bit register for signal <load_sreg>.
+    Found 8-bit register for signal <MISO_sreg>.
+    Found 256-bit register for signal <MOSI_big_sreg>.
+    Found 8-bit register for signal <MOSI_sreg>.
+    Found 9-bit up counter for signal <sck_cnt>.
+    Found 1-bit register for signal <sck_cnt_inc>.
+    Found 1-bit register for signal <sck_cnt_rst>.
+    Found 1-bit register for signal <shift_miso>.
+    Found 1-bit register for signal <shift_mosi>.
+    Found 5-bit register for signal <sstate>.
+    Found 5-bit adder for signal <sstate$addsub0000> created at line 274.
+    Found 9-bit comparator equal for signal <sstate$cmp_eq0000> created at line 227.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <MOSI_big_sreg>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   2 Counter(s).
+	inferred 296 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <Generic_SPI_FSM> synthesized.
+
+
+Synthesizing Unit <tx_module>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/tx_module.vhd".
+WARNING:Xst:1780 - Signal <wr_en> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <wr_ack> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <underflow> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <spi_rst> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <row_ptr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rd_en> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <rcstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <pl_cnt> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <overflow> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <full> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fifo_dout> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fifo_din> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <enable_ce> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <empty> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dout_big> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <din<7:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <data_count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <col_ptr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cnt> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ce_high> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <almost_full> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <almost_empty> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <SR_back> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <R_TX_ADDR> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <R_STATUS> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <R_RX_ADDR_P0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <R_OBSERVE_TX> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <CS_override> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <tx_ready>.
+    Found 1-bit register for signal <Tx_ce>.
+    Found 18-bit up counter for signal <cstate>.
+    Found 8-bit register for signal <dout>.
+    Found 9-bit register for signal <sck_pulses>.
+    Found 1-bit register for signal <spi_cs_enable>.
+    Found 1-bit register for signal <spi_go>.
+    Found 24-bit register for signal <tstate>.
+    Found 24-bit adder for signal <tstate$addsub0000> created at line 750.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  45 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <tx_module> synthesized.
+
+
+Synthesizing Unit <TxTest>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/TxTest.vhd".
+WARNING:Xst:646 - Signal <wr_data_count> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <wr_ack> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <wfs> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <valid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <underflow> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <tstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rd_data_count> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <overflow> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <ftdi_send> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <ftdi_done> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ftdi_busy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dbg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <data_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <data_in> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:646 - Signal <FE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_3> for signal <rstate>.
+    -----------------------------------------------------------------------
+    | States             | 50                                             |
+    | Transitions        | 100                                            |
+    | Inputs             | 2                                              |
+    | Outputs            | 27                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000000                                         |
+    | Power Up State     | 000000                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_4> for signal <cntl>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <c_buff>.
+    Found 8-bit register for signal <colptr>.
+    Found 1-bit register for signal <CS>.
+    Found 1-bit register for signal <cs_buff>.
+    Found 8-bit register for signal <f_buff>.
+    Found 8-bit register for signal <fifo_din>.
+    Found 1-bit register for signal <MISO>.
+    Found 1-bit register for signal <miso_buff>.
+    Found 8-bit register for signal <pixel>.
+    Found 8-bit register for signal <r_buff>.
+    Found 8-bit register for signal <rowptr>.
+    Found 1-bit register for signal <SCK>.
+    Found 1-bit register for signal <sck_buff>.
+    Found 1-bit register for signal <serial_data_ready>.
+    Found 1-bit register for signal <sync>.
+    Found 1-bit register for signal <write_fifo>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred  65 D-type flip-flop(s).
+Unit <TxTest> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 15-bit adder                                          : 1
+ 24-bit adder                                          : 1
+ 5-bit adder                                           : 3
+# Counters                                             : 5
+ 18-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+ 9-bit up counter                                      : 1
+# Registers                                            : 339
+ 1-bit register                                        : 319
+ 15-bit register                                       : 1
+ 24-bit register                                       : 1
+ 256-bit register                                      : 1
+ 3-bit register                                        : 1
+ 5-bit register                                        : 3
+ 8-bit register                                        : 12
+ 9-bit register                                        : 1
+# Comparators                                          : 1
+ 9-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_4> for best encoding.
+Optimizing FSM <cntl/FSM> on signal <cntl[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00001
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
+-------------------
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <rstate/FSM> on signal <rstate[1:50]> with one-hot encoding.
+--------------------------------------------------------------
+ State  | Encoding
+--------------------------------------------------------------
+ 000000 | 00000000000000000000000000000000000000000000000001
+ 000001 | 00000000000000000000000000000000000000000000000010
+ 000010 | 00000000000000000000000000000000000000000000000100
+ 000011 | 00000000000000000000000000000000000000000000001000
+ 000100 | 00000000000000000000000000000000000000000000010000
+ 000101 | 00000000000000000000000000000000000000000000100000
+ 000110 | 00000000000000000000000000000000000000000001000000
+ 000111 | 00000000000000000000000000000000000000000010000000
+ 001000 | 00000000000000000000000000000000000000000100000000
+ 001001 | 00000000000000000000000000000000000000001000000000
+ 001010 | 00000000000000000000000000000000000000010000000000
+ 001011 | 00000000000000000000000000000000000000100000000000
+ 001100 | 00000000000000000000000000000000000001000000000000
+ 001101 | 00000000000000000000000000000000000010000000000000
+ 001110 | 00000000000000000000000000000000000100000000000000
+ 001111 | 00000000000000000000000000000000001000000000000000
+ 010000 | 00000000000000000000000000000000010000000000000000
+ 010001 | 00000000000000000000000000000000100000000000000000
+ 010010 | 00000000000000000000000000000001000000000000000000
+ 010011 | 00000000000000000000000000000010000000000000000000
+ 010100 | 00000000000000000000000000000100000000000000000000
+ 010101 | 00000000000000000000000000001000000000000000000000
+ 010110 | 00000000000000000000000000010000000000000000000000
+ 010111 | 00000000000000000000000000100000000000000000000000
+ 011000 | 00000000000000000000000001000000000000000000000000
+ 011001 | 00000000000000000000000010000000000000000000000000
+ 011010 | 00000000000000000000000100000000000000000000000000
+ 011011 | 00000000000000000000001000000000000000000000000000
+ 011100 | 00000000000000000000010000000000000000000000000000
+ 011101 | 00000000000000000000100000000000000000000000000000
+ 011110 | 00000000000000000001000000000000000000000000000000
+ 011111 | 00000000000000000010000000000000000000000000000000
+ 100000 | 00000000000000000100000000000000000000000000000000
+ 100001 | 00000000000000001000000000000000000000000000000000
+ 100010 | 00000000000000010000000000000000000000000000000000
+ 100011 | 00000000000000100000000000000000000000000000000000
+ 100100 | 00000000000001000000000000000000000000000000000000
+ 100101 | 00000000000010000000000000000000000000000000000000
+ 100110 | 00000000000100000000000000000000000000000000000000
+ 100111 | 00000000001000000000000000000000000000000000000000
+ 101000 | 00000000010000000000000000000000000000000000000000
+ 101001 | 00000000100000000000000000000000000000000000000000
+ 101010 | 00000001000000000000000000000000000000000000000000
+ 101011 | 00000010000000000000000000000000000000000000000000
+ 101100 | 00000100000000000000000000000000000000000000000000
+ 101101 | 00001000000000000000000000000000000000000000000000
+ 101110 | 00010000000000000000000000000000000000000000000000
+ 101111 | 00100000000000000000000000000000000000000000000000
+ 110000 | 01000000000000000000000000000000000000000000000000
+ 110001 | 10000000000000000000000000000000000000000000000000
+--------------------------------------------------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <Inst_fifo_writer/wfs/FSM> on signal <wfs[1:10]> with one-hot encoding.
+---------------------
+ State | Encoding
+---------------------
+ 0000  | 0000000001
+ 0001  | 0000000010
+ 0010  | 0000000100
+ 0011  | 0000001000
+ 0100  | 0000010000
+ 0101  | 0000100000
+ 0110  | 0001000000
+ 0111  | 0010000000
+ 1000  | 0100000000
+ 1001  | 1000000000
+---------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <Inst_fifo_reader/rstate/FSM> on signal <rstate[1:21]> with one-hot encoding.
+---------------------------------
+ State  | Encoding
+---------------------------------
+ 000000 | 000000000000000000001
+ 000001 | 000000000000000000010
+ 000010 | 000000000000000000100
+ 000011 | 000000000000000001000
+ 000100 | 000000000000000010000
+ 000101 | 000000000000000100000
+ 000110 | 000000000000001000000
+ 000111 | 000000000000010000000
+ 001000 | 000000000000100000000
+ 001001 | 000000000001000000000
+ 001010 | 000000000010000000000
+ 001011 | 000000000100000000000
+ 001100 | 000000001000000000000
+ 001101 | 000000010000000000000
+ 001110 | 000000100000000000000
+ 001111 | 000001000000000000000
+ 010000 | 000010000000000000000
+ 010001 | 000100000000000000000
+ 010010 | 001000000000000000000
+ 010011 | 010000000000000000000
+ 010100 | 100000000000000000000
+---------------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Inst_packet_control/pl_cnt/FSM> on signal <pl_cnt[1:42]> with one-hot encoding.
+------------------------------------------------------
+ State  | Encoding
+------------------------------------------------------
+ 000000 | 000000000000000000000000000000000000000001
+ 000001 | 000000000000000000000000000000000000000010
+ 000010 | 000000000000000000000000000000000000000100
+ 000011 | 000000000000000000000000000000000000001000
+ 000100 | 000000000000000000000000000000000000010000
+ 000101 | 000000000000000000000000000000000000100000
+ 000110 | 000000000000000000000000000000000001000000
+ 000111 | 000000000000000000000000000000000010000000
+ 001000 | 000000000000000000000000000000000100000000
+ 001001 | 000000000000000000000000000000001000000000
+ 001010 | 000000000000000000000000000000010000000000
+ 001011 | 000000000000000000000000000000100000000000
+ 001100 | 000000000000000000000000000001000000000000
+ 001101 | 000000000000000000000000000010000000000000
+ 001110 | 000000000000000000000000000100000000000000
+ 001111 | 000000000000000000000000001000000000000000
+ 010000 | 000000000000000000000000010000000000000000
+ 010001 | 000000000000000000000000100000000000000000
+ 010010 | 000000000000000000000001000000000000000000
+ 010011 | 000000000000000000000010000000000000000000
+ 010100 | 000000000000000000000100000000000000000000
+ 010101 | 000000000000000000001000000000000000000000
+ 010110 | 000000000000000000010000000000000000000000
+ 010111 | 000000000000000000100000000000000000000000
+ 011000 | 000000000000000001000000000000000000000000
+ 011001 | 000000000000000010000000000000000000000000
+ 011010 | 000000000000000100000000000000000000000000
+ 011011 | 000000000000001000000000000000000000000000
+ 011100 | 000000000000010000000000000000000000000000
+ 011101 | 000000000000100000000000000000000000000000
+ 011110 | 000000000001000000000000000000000000000000
+ 011111 | 000000000010000000000000000000000000000000
+ 100000 | 000000000100000000000000000000000000000000
+ 100001 | 000000001000000000000000000000000000000000
+ 100010 | 000000010000000000000000000000000000000000
+ 100011 | 000000100000000000000000000000000000000000
+ 100100 | 000001000000000000000000000000000000000000
+ 100101 | 000010000000000000000000000000000000000000
+ 100110 | 000100000000000000000000000000000000000000
+ 100111 | 001000000000000000000000000000000000000000
+ 101000 | 010000000000000000000000000000000000000000
+ 101001 | 100000000000000000000000000000000000000000
+------------------------------------------------------
+Reading core <ipcore_dir/fifo.ngc>.
+Loading core <fifo> for timing and area information for instance <fifo_instance>.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <Inst_ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <MISO_sreg_1> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <MISO_sreg_2> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <MISO_sreg_3> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <MISO_sreg_4> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <MISO_sreg_5> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <MISO_sreg_6> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <MISO_sreg_7> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_1> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_2> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_3> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_4> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_5> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_6> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_7> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <fifo_dout_0> of sequential type is unconnected in block <Inst_fifo_reader>.
+WARNING:Xst:2677 - Node <fifo_dout_1> of sequential type is unconnected in block <Inst_fifo_reader>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 5
+# Adders/Subtractors                                   : 5
+ 15-bit adder                                          : 1
+ 24-bit adder                                          : 1
+ 5-bit adder                                           : 3
+# Counters                                             : 5
+ 18-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+ 9-bit up counter                                      : 1
+# Registers                                            : 737
+ Flip-Flops                                            : 737
+# Comparators                                          : 1
+ 9-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dbg_2> (without init value) has a constant value of 0 in block <ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <busy> (without init value) has a constant value of 0 in block <ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sck_pulses_0> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_1> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_2> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_4> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_5> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_6> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_7> (without init value) has a constant value of 0 in block <tx_module>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <TxTest> ...
+
+Optimizing unit <packet_control> ...
+
+Optimizing unit <pointer_control> ...
+
+Optimizing unit <ftdi_driver> ...
+
+Optimizing unit <fifo_reader> ...
+
+Optimizing unit <fifo_writer> ...
+
+Optimizing unit <Generic_SPI_FSM> ...
+
+Optimizing unit <tx_module> ...
+WARNING:Xst:2677 - Node <Inst_ftdi_driver/done> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_ftdi_driver/dbg_1> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_ftdi_driver/dbg_0> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_fifo_reader/fifo_dout_1> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_fifo_reader/fifo_dout_0> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_1> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_2> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_3> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_4> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_5> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_6> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/MISO_sreg_7> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_1> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_2> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_3> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_4> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_5> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_6> of sequential type is unconnected in block <TxTest>.
+WARNING:Xst:2677 - Node <Inst_tx_module/Inst_Generic_SPI_FSM/Dout_7> of sequential type is unconnected in block <TxTest>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TxTest, actual ratio is 24.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2> in Unit <fifo_instance> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_1> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_2> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_3> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_3_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2> in Unit <fifo_instance> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_1> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_2> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_3> in Unit <fifo_instance> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_3_1> 
+FlipFlop Inst_tx_module/tstate_0 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_1 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_2 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_3 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_4 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_5 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_6 has been replicated 1 time(s)
+FlipFlop Inst_tx_module/tstate_7 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 891
+ Flip-Flops                                            : 891
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TxTest.ngr
+Top Level Output File Name         : TxTest
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 1906
+#      GND                         : 2
+#      INV                         : 11
+#      LUT1                        : 104
+#      LUT2                        : 158
+#      LUT2_D                      : 13
+#      LUT2_L                      : 5
+#      LUT3                        : 404
+#      LUT3_D                      : 20
+#      LUT3_L                      : 14
+#      LUT4                        : 689
+#      LUT4_D                      : 74
+#      LUT4_L                      : 48
+#      MUXCY                       : 191
+#      MUXF5                       : 29
+#      VCC                         : 2
+#      XORCY                       : 142
+# FlipFlops/Latches                : 1143
+#      FD                          : 7
+#      FDC                         : 153
+#      FDCE                        : 75
+#      FDE                         : 34
+#      FDP                         : 12
+#      FDPE                        : 5
+#      FDR                         : 461
+#      FDRE                        : 343
+#      FDRS                        : 37
+#      FDRSE                       : 3
+#      FDS                         : 13
+# RAMS                             : 16
+#      RAMB16BWE                   : 16
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 22
+#      IBUF                        : 7
+#      IOBUF                       : 8
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400aft256-5 
+
+ Number of Slices:                      891  out of   3584    24%  
+ Number of Slice Flip Flops:           1143  out of   7168    15%  
+ Number of 4 input LUTs:               1540  out of   7168    21%  
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    195    11%  
+ Number of BRAMs:                        16  out of     20    80%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Inst_fifo_reader/rd_clk1           | BUFG                   | 135   |
+Inst_fifo_writer/wr_clk1           | BUFG                   | 149   |
+clk                                | BUFGP                  | 891   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                                                                                             | Buffer(FF name)                                                                                                        | Load  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------+
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<1>(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1:Q)| NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0)| 61    |
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<1>(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1:Q)| NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_0)| 60    |
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<0>(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0:Q)| NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_0)| 60    |
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<2>(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2:Q)| NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/rd_dc_i_0)        | 51    |
+Inst_fifo_reader/rst_inv(cntl_FSM_Scst_FSM_inv1_INV_0:O)                                                                                                   | NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN)                                      | 6     |
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb1:O)  | NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0)                                      | 3     |
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2:Q)             | NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i)         | 2     |
+fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb1:O)  | NONE(fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0)                                      | 2     |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 9.155ns (Maximum Frequency: 109.234MHz)
+   Minimum input arrival time before clock: 4.036ns
+   Maximum output required time after clock: 6.368ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Inst_fifo_reader/rd_clk1'
+  Clock period: 4.264ns (frequency: 234.508MHz)
+  Total number of paths / destination ports: 1098 / 391
+-------------------------------------------------------------------------
+Delay:               4.264ns (Levels of Logic = 16)
+  Source:            fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_0 (FF)
+  Destination:       fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/rd_dc_i_14 (FF)
+  Source Clock:      Inst_fifo_reader/rd_clk1 rising
+  Destination Clock: Inst_fifo_reader/rd_clk1 rising
+
+  Data Path: fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_0 to fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/rd_dc_i_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            19   0.495   0.988  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1<0>)
+     LUT2:I1->O            1   0.562   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_lut<0> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_lut<0>)
+     MUXCY:S->O            1   0.523   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<0> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<0>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<1> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<2> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<3> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<4> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<5> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<6> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<7> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<7>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<8> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<8>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<9> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<9>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<10> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<10>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<11> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<11>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<12> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<12>)
+     MUXCY:CI->O           0   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<13> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_cy<13>)
+     XORCY:CI->O           1   0.654   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/Msub_rd_dc_i_sub0000_xor<14> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/rd_dc_i_sub0000<14>)
+     FDC:D                     0.197          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.grdc1.rdc/rd_dc_i_14
+    ----------------------------------------
+    Total                      4.264ns (3.276ns logic, 0.988ns route)
+                                       (76.8% logic, 23.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Inst_fifo_writer/wr_clk1'
+  Clock period: 4.250ns (frequency: 235.305MHz)
+  Total number of paths / destination ports: 1156 / 464
+-------------------------------------------------------------------------
+Delay:               4.250ns (Levels of Logic = 16)
+  Source:            fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/count_d2_0 (FF)
+  Destination:       fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_14 (FF)
+  Source Clock:      Inst_fifo_writer/wr_clk1 rising
+  Destination Clock: Inst_fifo_writer/wr_clk1 rising
+
+  Data Path: fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/count_d2_0 to fifo_instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            18   0.495   0.974  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/count_d2_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/count_d2<0>)
+     LUT2:I1->O            1   0.562   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>)
+     MUXCY:S->O            1   0.523   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<5> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<6> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<7> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<7>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<8> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<8>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<9> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<9>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<10> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<10>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<11> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<11>)
+     MUXCY:CI->O           1   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<12> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<12>)
+     MUXCY:CI->O           0   0.065   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<13> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<13>)
+     XORCY:CI->O           1   0.654   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<14> (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<14>)
+     FDC:D                     0.197          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_14
+    ----------------------------------------
+    Total                      4.250ns (3.276ns logic, 0.974ns route)
+                                       (77.1% logic, 22.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.155ns (frequency: 109.234MHz)
+  Total number of paths / destination ports: 40404 / 1344
+-------------------------------------------------------------------------
+Delay:               9.155ns (Levels of Logic = 11)
+  Source:            Inst_tx_module/tstate_11 (FF)
+  Destination:       Inst_tx_module/tstate_8 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Inst_tx_module/tstate_11 to Inst_tx_module/tstate_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q             4   0.495   0.607  Inst_tx_module/tstate_11 (Inst_tx_module/tstate_11)
+     LUT4_D:I0->O         14   0.561   0.852  Inst_tx_module/tstate_mux0001<19>32_SW0 (N230)
+     LUT4_D:I3->O         11   0.561   0.795  Inst_tx_module/tstate_mux0001<19>32_1 (Inst_tx_module/tstate_mux0001<19>32)
+     LUT4:I3->O            3   0.561   0.453  Inst_tx_module/spi_go_cmp_eq000011 (Inst_tx_module/N52)
+     LUT4:I3->O            1   0.561   0.000  Inst_tx_module/tstate_mux0001<10>1_wg_lut<17> (Inst_tx_module/tstate_mux0001<10>1_wg_lut<17>)
+     MUXCY:S->O            1   0.523   0.000  Inst_tx_module/tstate_mux0001<10>1_wg_cy<17> (Inst_tx_module/tstate_mux0001<10>1_wg_cy<17>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_tx_module/tstate_mux0001<10>1_wg_cy<18> (Inst_tx_module/tstate_mux0001<10>1_wg_cy<18>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_tx_module/tstate_mux0001<10>1_wg_cy<19> (Inst_tx_module/tstate_mux0001<10>1_wg_cy<19>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_tx_module/tstate_mux0001<10>1_wg_cy<20> (Inst_tx_module/tstate_mux0001<10>1_wg_cy<20>)
+     MUXCY:CI->O          22   0.179   0.991  Inst_tx_module/tstate_mux0001<10>1_wg_cy<21> (Inst_tx_module/tstate_mux0001<10>1_wg_cy<21>)
+     LUT4:I3->O            4   0.561   0.501  Inst_tx_module/tstate_mux0001<23>3 (Inst_tx_module/N35)
+     LUT4:I3->O            1   0.561   0.000  Inst_tx_module/tstate_mux0001<15>71 (Inst_tx_module/tstate_mux0001<15>)
+     FDR:D                     0.197          Inst_tx_module/tstate_8
+    ----------------------------------------
+    Total                      9.155ns (4.955ns logic, 4.200ns route)
+                                       (54.1% logic, 45.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 905 / 904
+-------------------------------------------------------------------------
+Offset:              4.036ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       Inst_ftdi_driver/ftdi_dout_7 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to Inst_ftdi_driver/ftdi_dout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            15   0.824   0.930  rst_IBUF (rst_IBUF)
+     LUT3:I1->O            1   0.562   0.359  Inst_ftdi_driver/ftdi_dout_not0001_SW0 (N52)
+     LUT4:I3->O            8   0.561   0.643  Inst_ftdi_driver/ftdi_dout_not0001 (Inst_ftdi_driver/ftdi_dout_not0001)
+     FDE:CE                    0.156          Inst_ftdi_driver/ftdi_dout_0
+    ----------------------------------------
+    Total                      4.036ns (2.103ns logic, 1.933ns route)
+                                       (52.1% logic, 47.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 18 / 15
+-------------------------------------------------------------------------
+Offset:              6.368ns (Levels of Logic = 2)
+  Source:            Inst_tx_module/sck_pulses_8 (FF)
+  Destination:       tx_mosi (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Inst_tx_module/sck_pulses_8 to tx_mosi
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.495   0.559  Inst_tx_module/sck_pulses_8 (Inst_tx_module/sck_pulses_8)
+     LUT4:I0->O            1   0.561   0.357  Inst_tx_module/Inst_Generic_SPI_FSM/MOSI1 (tx_mosi_OBUF)
+     OBUF:I->O                 4.396          tx_mosi_OBUF (tx_mosi)
+    ----------------------------------------
+    Total                      6.368ns (5.452ns logic, 0.916ns route)
+                                       (85.6% logic, 14.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 26.00 secs
+Total CPU time to Xst completion: 26.14 secs
+ 
+--> 
+
+Total memory usage is 340080 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   96 (   0 filtered)
+Number of infos    :   35 (   0 filtered)
+

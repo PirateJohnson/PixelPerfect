@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/packet_cntl_tb_isim_beh.exe" -prj "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/packet_cntl_tb_beh.prj" "work.packet_cntl_tb" 

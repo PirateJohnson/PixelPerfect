@@ -1,0 +1,1411 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: RxTest.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "RxTest.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "RxTest"
+Output Format                      : NGC
+Target Device                      : xc3s400a-5-ft256
+
+---- Source Options
+Top Module Name                    : RxTest
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/Generic_SPI_FSM.vhd" in Library work.
+Architecture behavioral of Entity generic_spi_fsm is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/packet_cntl.vhd" in Library work.
+Architecture behavioral of Entity packet_cntl is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/ftdi_driver.vhd" in Library work.
+Architecture behavioral of Entity ftdi_driver is up to date.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/rx_driver.vhd" in Library work.
+Entity <rx_driver> compiled.
+Entity <rx_driver> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.vhd" in Library work.
+Architecture behavioral of Entity rxtest is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <RxTest> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <packet_cntl> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ftdi_driver> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <rx_driver> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Generic_SPI_FSM> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <RxTest> in library <work> (Architecture <behavioral>).
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF8> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF9> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF10> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF11> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF12> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF13> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF14> in unit <RxTest>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <inst_IOBUF15> in unit <RxTest>.
+    Set user-defined property "DRIVE =  12" for instance <inst_IOBUF15> in unit <RxTest>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <inst_IOBUF15> in unit <RxTest>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <inst_IOBUF15> in unit <RxTest>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <inst_IOBUF15> in unit <RxTest>.
+    Set user-defined property "IOSTANDARD =  LVTTL" for instance <inst_IOBUF15> in unit <RxTest>.
+    Set user-defined property "SLEW =  FAST" for instance <inst_IOBUF15> in unit <RxTest>.
+Entity <RxTest> analyzed. Unit <RxTest> generated.
+
+Analyzing Entity <packet_cntl> in library <work> (Architecture <behavioral>).
+Entity <packet_cntl> analyzed. Unit <packet_cntl> generated.
+
+Analyzing Entity <ftdi_driver> in library <work> (Architecture <behavioral>).
+Entity <ftdi_driver> analyzed. Unit <ftdi_driver> generated.
+
+Analyzing Entity <rx_driver> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <R_CONFIG> in unit <rx_driver> has a constant value of 00001011 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_EN_AA> in unit <rx_driver> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_EN_RXADDR> in unit <rx_driver> has a constant value of 00000010 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_SETUP_AW> in unit <rx_driver> has a constant value of 00000011 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_SETUP_RETR> in unit <rx_driver> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RF_CH> in unit <rx_driver> has a constant value of 00000010 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RF_SETUP> in unit <rx_driver> has a constant value of 00001111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_STATUS> in unit <rx_driver> has a constant value of 01110000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_TX_ADDR> in unit <rx_driver> has a constant value of 1101111010101101101111101110111111111111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RX_ADDR_P0> in unit <rx_driver> has a constant value of 1101111010101101101111101110111111111111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <R_RX_PW_P0> in unit <rx_driver> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <spi_dir> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <enable_ce> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rd_en> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <tx_ready> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <CS_override> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <cnt_en> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <cnt_rst> in unit <rx_driver> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <wr_en> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <fwr> in unit <rx_driver> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <load_data> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <wr_s1> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <pl_cnt> in unit <rx_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <rx_driver> analyzed. Unit <rx_driver> generated.
+
+Analyzing Entity <Generic_SPI_FSM> in library <work> (Architecture <behavioral>).
+Entity <Generic_SPI_FSM> analyzed. Unit <Generic_SPI_FSM> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <packet_cntl>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/packet_cntl.vhd".
+WARNING:Xst:646 - Signal <payload_buffer<15:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 81                                             |
+    | Transitions        | 122                                            |
+    | Inputs             | 2                                              |
+    | Outputs            | 81                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000000                                        |
+    | Power Up State     | 0000000                                        |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <ftdi_go>.
+    Found 8-bit register for signal <dout>.
+    Found 256-bit register for signal <payload_buffer>.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <payload_buffer>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 265 D-type flip-flop(s).
+Unit <packet_cntl> synthesized.
+
+
+Synthesizing Unit <ftdi_driver>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/ftdi_driver.vhd".
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <rd>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <wr>.
+    Found 8-bit register for signal <ftdi_dout>.
+    Found 3-bit register for signal <dbg>.
+    Found 8-bit register for signal <int_data>.
+    Found 1-bit register for signal <int_dir>.
+    Found 5-bit register for signal <ustate>.
+    Found 5-bit adder for signal <ustate$addsub0000> created at line 144.
+    Summary:
+	inferred  29 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ftdi_driver> synthesized.
+
+
+Synthesizing Unit <Generic_SPI_FSM>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/Generic_SPI_FSM.vhd".
+    Found 256-bit register for signal <Dout_big>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <SCL>.
+    Found 8-bit register for signal <Dout>.
+    Found 1-bit register for signal <CS>.
+    Found 5-bit up counter for signal <cw_cnt>.
+    Found 1-bit register for signal <cw_cnt_en>.
+    Found 1-bit register for signal <int_CS_Enable>.
+    Found 1-bit register for signal <int_dir>.
+    Found 1-bit register for signal <load_sreg>.
+    Found 256-bit register for signal <MISO_big_sreg>.
+    Found 8-bit register for signal <MISO_sreg>.
+    Found 256-bit register for signal <MOSI_big_sreg>.
+    Found 8-bit register for signal <MOSI_sreg>.
+    Found 9-bit up counter for signal <sck_cnt>.
+    Found 1-bit register for signal <sck_cnt_inc>.
+    Found 1-bit register for signal <sck_cnt_rst>.
+    Found 1-bit register for signal <shift_miso>.
+    Found 1-bit register for signal <shift_mosi>.
+    Found 5-bit register for signal <sstate>.
+    Found 5-bit adder for signal <sstate$addsub0000> created at line 278.
+    Found 9-bit comparator equal for signal <sstate$cmp_eq0000> created at line 230.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <MOSI_big_sreg>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <MISO_big_sreg>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   2 Counter(s).
+	inferred 808 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <Generic_SPI_FSM> synthesized.
+
+
+Synthesizing Unit <rx_driver>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/rx_driver.vhd".
+WARNING:Xst:646 - Signal <wr_s1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <wr_en> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <wr_ack> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <valid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <underflow> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <tx_ready> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <tx_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <spi_rst> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <row_ptr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rd_en> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <rcstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pl_cnt<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <pix> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <overflow> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <load_data> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fwr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <full> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fifo_dout> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fifo_din> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <enable_ce> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <empty> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <dout_big> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.
+WARNING:Xst:646 - Signal <din<7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <din<5:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <data_count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <col_ptr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cnt_rst> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cnt_en> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cnt> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <ce_high> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <almost_full> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <almost_empty> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <SR_back> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <R_TX_ADDR> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <R_STATUS> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <R_RX_ADDR_P0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <CS_override> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <payload_available>.
+    Found 1-bit register for signal <rx_ce>.
+    Found 8-bit register for signal <dout>.
+    Found 256-bit register for signal <payload_buffer>.
+    Found 9-bit register for signal <sck_pulses>.
+    Found 1-bit register for signal <spi_cs_enable>.
+    Found 1-bit register for signal <spi_go>.
+    Found 24-bit register for signal <tstate>.
+    Found 24-bit adder for signal <tstate$addsub0000> created at line 778.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <payload_buffer>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 301 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <rx_driver> synthesized.
+
+
+Synthesizing Unit <RxTest>.
+    Related source file is "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/RxTest.vhd".
+WARNING:Xst:1780 - Signal <spi_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <spi_done> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <spi_dir> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <sck_pulses> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ftdi_busy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dout> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <din_big> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <din> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dbg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <data_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <RxTest> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 24-bit adder                                          : 1
+ 5-bit adder                                           : 2
+# Counters                                             : 2
+ 5-bit up counter                                      : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 38
+ 1-bit register                                        : 21
+ 24-bit register                                       : 1
+ 256-bit register                                      : 5
+ 3-bit register                                        : 1
+ 5-bit register                                        : 2
+ 8-bit register                                        : 7
+ 9-bit register                                        : 1
+# Comparators                                          : 1
+ 9-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Inst_packet_cntl/pstate/FSM> on signal <pstate[1:81]> with one-hot encoding.
+----------------------------------------------------------------------------------------------
+ State   | Encoding
+----------------------------------------------------------------------------------------------
+ 0000000 | 000000000000000000000000000000000000000000000000000000000000000000000000000000001
+ 0000001 | 000000000000000000000000000000000000000000000000000000000000000000000000000000010
+ 0000010 | 000000000000000000000000000000000000000000000000000000000000000000000000000000100
+ 0000011 | 000000000000000000000000000000000000000000000000000000000000000000000000000001000
+ 0000100 | 000000000000000000000000000000000000000000000000000000000000000000000000000010000
+ 0000101 | 000000000000000000000000000000000000000000000000000000000000000000000000000100000
+ 0000110 | 000000000000000000000000000000000000000000000000000000000000000000000000001000000
+ 0000111 | 000000000000000000000000000000000000000000000000000000000000000000000000010000000
+ 0001000 | 000000000000000000000000000000000000000000000000000000000000000000000000100000000
+ 0001001 | 000000000000000000000000000000000000000000000000000000000000000000000001000000000
+ 0001010 | 000000000000000000000000000000000000000000000000000000000000000000000010000000000
+ 0001011 | 000000000000000000000000000000000000000000000000000000000000000000000100000000000
+ 0001100 | 000000000000000000000000000000000000000000000000000000000000000000001000000000000
+ 0001101 | 000000000000000000000000000000000000000000000000000000000000000000010000000000000
+ 0001110 | 000000000000000000000000000000000000000000000000000000000000000000100000000000000
+ 0001111 | 000000000000000000000000000000000000000000000000000000000000000001000000000000000
+ 0010000 | 000000000000000000000000000000000000000000000000000000000000000010000000000000000
+ 0010001 | 000000000000000000000000000000000000000000000000000000000000000100000000000000000
+ 0010010 | 000000000000000000000000000000000000000000000000000000000000001000000000000000000
+ 0010011 | 000000000000000000000000000000000000000000000000000000000000010000000000000000000
+ 0010100 | 000000000000000000000000000000000000000000000000000000000000100000000000000000000
+ 0010101 | 000000000000000000000000000000000000000000000000000000000001000000000000000000000
+ 0010110 | 000000000000000000000000000000000000000000000000000000000010000000000000000000000
+ 0010111 | 000000000000000000000000000000000000000000000000000000000100000000000000000000000
+ 0011000 | 000000000000000000000000000000000000000000000000000000001000000000000000000000000
+ 0011001 | 000000000000000000000000000000000000000000000000000000010000000000000000000000000
+ 0011010 | 000000000000000000000000000000000000000000000000000000100000000000000000000000000
+ 0011011 | 000000000000000000000000000000000000000000000000000001000000000000000000000000000
+ 0011100 | 000000000000000000000000000000000000000000000000000010000000000000000000000000000
+ 0011101 | 000000000000000000000000000000000000000000000000000100000000000000000000000000000
+ 0011110 | 000000000000000000000000000000000000000000000000001000000000000000000000000000000
+ 0011111 | 000000000000000000000000000000000000000000000000010000000000000000000000000000000
+ 0100000 | 000000000000000000000000000000000000000000000000100000000000000000000000000000000
+ 0100001 | 000000000000000000000000000000000000000000000001000000000000000000000000000000000
+ 0100010 | 000000000000000000000000000000000000000000000010000000000000000000000000000000000
+ 0100011 | 000000000000000000000000000000000000000000000100000000000000000000000000000000000
+ 0100100 | 000000000000000000000000000000000000000000001000000000000000000000000000000000000
+ 0100101 | 000000000000000000000000000000000000000000010000000000000000000000000000000000000
+ 0100110 | 000000000000000000000000000000000000000000100000000000000000000000000000000000000
+ 0100111 | 000000000000000000000000000000000000000001000000000000000000000000000000000000000
+ 0101000 | 000000000000000000000000000000000000000010000000000000000000000000000000000000000
+ 0101001 | 000000000000000000000000000000000000000100000000000000000000000000000000000000000
+ 0101010 | 000000000000000000000000000000000000001000000000000000000000000000000000000000000
+ 0101011 | 000000000000000000000000000000000000010000000000000000000000000000000000000000000
+ 0101100 | 000000000000000000000000000000000000100000000000000000000000000000000000000000000
+ 0101101 | 000000000000000000000000000000000001000000000000000000000000000000000000000000000
+ 0101110 | 000000000000000000000000000000000010000000000000000000000000000000000000000000000
+ 0101111 | 000000000000000000000000000000000100000000000000000000000000000000000000000000000
+ 0110000 | 000000000000000000000000000000001000000000000000000000000000000000000000000000000
+ 0110001 | 000000000000000000000000000000010000000000000000000000000000000000000000000000000
+ 0110010 | 000000000000000000000000000000100000000000000000000000000000000000000000000000000
+ 0110011 | 000000000000000000000000000001000000000000000000000000000000000000000000000000000
+ 0110100 | 000000000000000000000000000010000000000000000000000000000000000000000000000000000
+ 0110101 | 000000000000000000000000000100000000000000000000000000000000000000000000000000000
+ 0110110 | 000000000000000000000000001000000000000000000000000000000000000000000000000000000
+ 0110111 | 000000000000000000000000010000000000000000000000000000000000000000000000000000000
+ 0111000 | 000000000000000000000000100000000000000000000000000000000000000000000000000000000
+ 0111001 | 000000000000000000000001000000000000000000000000000000000000000000000000000000000
+ 0111010 | 000000000000000000000010000000000000000000000000000000000000000000000000000000000
+ 0111011 | 000000000000000000000100000000000000000000000000000000000000000000000000000000000
+ 0111100 | 000000000000000000001000000000000000000000000000000000000000000000000000000000000
+ 0111101 | 000000000000000000010000000000000000000000000000000000000000000000000000000000000
+ 0111110 | 000000000000000000100000000000000000000000000000000000000000000000000000000000000
+ 0111111 | 000000000000000001000000000000000000000000000000000000000000000000000000000000000
+ 1000000 | 000000000000000010000000000000000000000000000000000000000000000000000000000000000
+ 1000001 | 000000000000000100000000000000000000000000000000000000000000000000000000000000000
+ 1000010 | 000000000000001000000000000000000000000000000000000000000000000000000000000000000
+ 1000011 | 000000000000010000000000000000000000000000000000000000000000000000000000000000000
+ 1000100 | 000000000000100000000000000000000000000000000000000000000000000000000000000000000
+ 1000101 | 000000000001000000000000000000000000000000000000000000000000000000000000000000000
+ 1000110 | 000000000010000000000000000000000000000000000000000000000000000000000000000000000
+ 1000111 | 000000000100000000000000000000000000000000000000000000000000000000000000000000000
+ 1001000 | 000000001000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001001 | 000000010000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001010 | 000000100000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001011 | 000001000000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001100 | 000010000000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001101 | 000100000000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001110 | 001000000000000000000000000000000000000000000000000000000000000000000000000000000
+ 1001111 | 010000000000000000000000000000000000000000000000000000000000000000000000000000000
+ 1010000 | 100000000000000000000000000000000000000000000000000000000000000000000000000000000
+----------------------------------------------------------------------------------------------
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_159> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_160> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_161> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_162> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_163> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_164> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_165> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_166> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_167> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_168> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_169> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_170> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_171> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_172> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_173> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_174> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_175> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_176> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_177> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_178> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_179> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_180> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_181> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_182> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_183> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_184> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_185> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_186> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_187> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_188> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_189> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_190> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_126> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_127> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_128> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_129> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_130> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_131> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_132> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_133> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_134> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_135> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_136> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_137> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_138> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_139> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_140> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_141> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_158> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_157> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_156> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_155> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_154> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_153> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_152> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_151> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_150> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_149> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_148> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_147> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_146> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_145> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_144> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_143> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_142> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_224> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_225> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_226> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_227> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_228> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_229> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_230> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_231> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_232> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_233> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_234> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_235> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_236> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_237> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_238> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_239> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_240> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_241> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_242> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_243> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_244> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_245> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_246> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_247> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_248> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_249> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_250> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_251> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_252> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_253> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_254> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_255> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_191> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_192> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_193> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_194> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_195> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_196> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_197> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_198> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_199> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_200> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_201> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_202> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_203> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_204> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_205> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_206> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_223> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_222> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_221> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_220> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_219> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_218> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_217> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_216> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_215> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_214> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_213> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_212> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_211> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_210> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_209> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_208> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_207> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_29> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_30> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_31> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_32> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_33> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_34> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_35> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_36> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_37> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_38> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_39> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_40> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_41> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_42> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_43> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_44> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_45> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_46> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_47> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_48> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_49> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_50> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_51> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_52> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_53> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_54> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_55> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_56> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_57> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_58> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_59> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_60> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dout_0> (without init value) has a constant value of 0 in block <Inst_packet_cntl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dout_1> (without init value) has a constant value of 0 in block <Inst_packet_cntl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <Inst_ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_0> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_1> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_2> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_3> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_4> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_5> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_6> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_7> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_8> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_9> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_10> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_11> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_28> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_27> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_26> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_25> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_24> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_23> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_22> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_21> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_20> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_19> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_18> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_17> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_16> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_15> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_14> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_13> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_12> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_94> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_95> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_96> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_97> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_98> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_99> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_100> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_101> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_102> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_103> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_104> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_105> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_106> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_107> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_108> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_109> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_110> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_111> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_112> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_113> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_114> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_115> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_116> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_117> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_118> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_119> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_120> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_121> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_122> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_123> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_124> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_125> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_61> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_62> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_63> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_64> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_65> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_66> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_67> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_68> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_69> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_70> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_71> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_72> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_73> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_74> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_75> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_76> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_93> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_92> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_91> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_90> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_89> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_88> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_87> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_86> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_85> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_84> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_83> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_82> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_81> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_80> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_79> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_78> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_77> (without init value) has a constant value of 0 in block <Inst_Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <payload_buffer_0> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_1> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_2> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_3> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_4> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_5> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_6> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_7> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_8> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_9> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_10> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_11> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_12> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_13> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_14> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_15> of sequential type is unconnected in block <Inst_packet_cntl>.
+WARNING:Xst:2677 - Node <MISO_sreg_7> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_0> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_1> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_2> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_3> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_4> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_5> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_6> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_7> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_8> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_9> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_10> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_11> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_12> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_13> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_14> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_big_15> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_1> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_2> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_3> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_4> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_5> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <Dout_7> of sequential type is unconnected in block <Inst_Generic_SPI_FSM>.
+WARNING:Xst:2677 - Node <payload_buffer_0> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_1> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_2> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_3> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_4> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_5> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_6> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_7> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_8> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_9> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_10> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_11> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_12> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_13> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_14> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_15> of sequential type is unconnected in block <Inst_rx_driver>.
+WARNING:Xst:2677 - Node <payload_buffer_0> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_1> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_2> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_3> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_4> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_5> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_6> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_7> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_8> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_9> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_10> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_11> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_12> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_13> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_14> of sequential type is unconnected in block <packet_cntl>.
+WARNING:Xst:2677 - Node <payload_buffer_15> of sequential type is unconnected in block <packet_cntl>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 3
+ 24-bit adder                                          : 1
+ 5-bit adder                                           : 2
+# Counters                                             : 2
+ 5-bit up counter                                      : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 1387
+ Flip-Flops                                            : 1387
+# Comparators                                          : 1
+ 9-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <dout_0> (without init value) has a constant value of 0 in block <packet_cntl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_1> (without init value) has a constant value of 0 in block <packet_cntl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dbg_2> (without init value) has a constant value of 0 in block <ftdi_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <int_dir> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MOSI_big_sreg_160> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_161> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_162> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_163> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_164> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_165> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_166> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_167> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_168> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_169> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_170> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_171> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_172> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_173> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_174> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_175> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_176> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_177> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_178> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_179> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_180> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_181> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_182> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_183> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_184> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_185> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_186> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_187> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_188> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_189> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_190> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_191> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_128> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_129> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_130> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_131> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_132> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_133> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_134> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_135> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_136> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_137> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_138> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_139> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_140> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_141> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_142> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_143> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_144> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_145> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_146> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_147> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_148> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_149> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_150> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_151> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_152> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_153> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_154> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_155> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_156> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_157> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_158> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_159> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_224> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_225> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_226> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_227> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_228> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_229> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_230> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_231> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_232> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_233> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_234> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_235> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_236> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_237> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_238> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_239> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_240> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_241> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_242> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_243> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_244> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_245> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_246> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_247> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_248> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_249> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_250> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_251> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_252> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_253> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_254> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_255> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_192> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_193> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_194> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_195> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_196> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_197> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_198> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_199> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_200> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_201> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_202> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_203> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_204> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_205> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_206> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_207> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_208> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_209> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_210> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_211> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_212> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_213> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_214> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_215> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_216> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_217> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_218> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_219> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_220> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_221> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_222> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_223> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_32> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_33> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_34> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_35> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_36> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_37> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_38> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_39> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_40> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_41> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_42> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_43> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_44> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_45> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_46> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_47> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_48> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_49> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_50> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_51> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_52> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_53> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_54> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_55> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_56> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_57> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_58> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_59> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_60> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_61> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_62> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_63> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_0> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_1> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_2> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_3> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_4> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_5> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_6> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_7> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_8> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_9> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_10> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_11> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_12> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_13> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_14> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_15> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_16> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_17> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_18> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_19> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_20> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_21> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_22> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_23> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_24> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_25> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_26> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_27> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_28> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_29> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_30> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_31> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_96> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_97> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_98> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_99> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_100> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_101> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_102> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_103> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_104> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_105> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_106> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_107> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_108> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_109> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_110> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_111> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_112> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_113> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_114> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_115> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_116> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_117> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_118> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_119> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_120> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_121> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_122> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_123> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_124> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_125> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_126> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_127> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_64> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_65> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_66> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_67> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_68> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_69> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_70> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_71> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_72> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_73> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_74> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_75> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_76> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_77> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_78> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_79> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_80> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_81> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_82> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_83> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_84> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_85> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_86> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_87> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_88> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_89> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_90> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_91> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_92> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_93> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_94> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MOSI_big_sreg_95> (without init value) has a constant value of 0 in block <Generic_SPI_FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sck_pulses_0> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_1> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_2> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_4> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_5> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_6> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sck_pulses_7> (without init value) has a constant value of 0 in block <rx_driver>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <RxTest> ...
+
+Optimizing unit <packet_cntl> ...
+
+Optimizing unit <ftdi_driver> ...
+
+Optimizing unit <Generic_SPI_FSM> ...
+
+Optimizing unit <rx_driver> ...
+WARNING:Xst:2677 - Node <Inst_ftdi_driver/busy> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_ftdi_driver/dbg_1> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_ftdi_driver/dbg_0> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/MISO_sreg_7> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_0> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_1> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_2> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_3> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_4> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_5> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_6> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_7> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_8> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_9> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_10> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_11> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_12> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_13> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_14> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_big_15> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_1> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_2> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_3> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_4> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_5> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/Inst_Generic_SPI_FSM/Dout_7> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_15> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_14> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_13> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_12> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_11> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_10> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_9> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_8> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_7> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_6> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_5> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_4> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_3> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_2> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_1> of sequential type is unconnected in block <RxTest>.
+WARNING:Xst:2677 - Node <Inst_rx_driver/payload_buffer_0> of sequential type is unconnected in block <RxTest>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block RxTest, actual ratio is 25.
+FlipFlop Inst_rx_driver/tstate_0 has been replicated 1 time(s)
+FlipFlop Inst_rx_driver/tstate_1 has been replicated 1 time(s)
+FlipFlop Inst_rx_driver/tstate_5 has been replicated 1 time(s)
+FlipFlop Inst_rx_driver/tstate_6 has been replicated 2 time(s)
+FlipFlop Inst_rx_driver/tstate_7 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <RxTest> :
+	Found 17-bit shift register for signal <Inst_rx_driver/Inst_Generic_SPI_FSM/MISO_big_sreg_16>.
+	Found 6-bit shift register for signal <Inst_rx_driver/Inst_Generic_SPI_FSM/MISO_sreg_6>.
+Unit <RxTest> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1155
+ Flip-Flops                                            : 1155
+# Shift Registers                                      : 2
+ 17-bit shift register                                 : 1
+ 6-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : RxTest.ngr
+Top Level Output File Name         : RxTest
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 1457
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 31
+#      LUT2                        : 324
+#      LUT2_D                      : 8
+#      LUT3                        : 69
+#      LUT3_D                      : 17
+#      LUT3_L                      : 10
+#      LUT4                        : 669
+#      LUT4_D                      : 37
+#      LUT4_L                      : 36
+#      MUXCY                       : 195
+#      MUXF5                       : 22
+#      VCC                         : 1
+#      XORCY                       : 33
+# FlipFlops/Latches                : 1163
+#      FD                          : 1
+#      FDE                         : 731
+#      FDR                         : 314
+#      FDRE                        : 36
+#      FDRS                        : 34
+#      FDRSE                       : 40
+#      FDS                         : 6
+#      FDSE                        : 1
+# Shift Registers                  : 2
+#      SRL16E                      : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 4
+#      IOBUF                       : 8
+#      OBUF                        : 6
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400aft256-5 
+
+ Number of Slices:                      919  out of   3584    25%  
+ Number of Slice Flip Flops:           1163  out of   7168    16%  
+ Number of 4 input LUTs:               1207  out of   7168    16%  
+    Number used as logic:              1205
+    Number used as Shift registers:       2
+ Number of IOs:                          19
+ Number of bonded IOBs:                  19  out of    195     9%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1165  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 9.936ns (Maximum Frequency: 100.641MHz)
+   Minimum input arrival time before clock: 3.868ns
+   Maximum output required time after clock: 6.327ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.936ns (frequency: 100.641MHz)
+  Total number of paths / destination ports: 50873 / 2021
+-------------------------------------------------------------------------
+Delay:               9.936ns (Levels of Logic = 17)
+  Source:            Inst_rx_driver/tstate_8 (FF)
+  Destination:       Inst_rx_driver/tstate_19 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Inst_rx_driver/tstate_8 to Inst_rx_driver/tstate_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q            14   0.495   0.852  Inst_rx_driver/tstate_8 (Inst_rx_driver/tstate_8)
+     LUT4_D:I3->O         13   0.561   0.838  Inst_rx_driver/tstate_mux0000<23>141_SW0 (N175)
+     LUT4:I3->O           14   0.561   0.850  Inst_rx_driver/tstate_mux0000<17>61 (Inst_rx_driver/N83)
+     MUXF5:S->O            1   0.652   0.359  Inst_rx_driver/tstate_mux0000<4>1_wg_lut<12>_SW0_SW1 (N173)
+     LUT4:I3->O            1   0.561   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_lut<12> (Inst_rx_driver/tstate_mux0000<4>1_wg_lut<12>)
+     MUXCY:S->O            1   0.523   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<12> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<12>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<13> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<13>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<14> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<14>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<15> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<15>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<16> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<16>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<17> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<17>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<18> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<18>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<19> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<19>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<20> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<20>)
+     MUXCY:CI->O           1   0.065   0.000  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<21> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<21>)
+     MUXCY:CI->O           7   0.179   0.604  Inst_rx_driver/tstate_mux0000<4>1_wg_cy<22> (Inst_rx_driver/tstate_mux0000<4>1_wg_cy<22>)
+     LUT4_D:I3->O          2   0.561   0.403  Inst_rx_driver/tstate_mux0000<4>2 (Inst_rx_driver/N27)
+     LUT4:I2->O            1   0.561   0.357  Inst_rx_driver/tstate_mux0000<6>_SW0 (N90)
+     FDRS:S                    0.435          Inst_rx_driver/tstate_17
+    ----------------------------------------
+    Total                      9.936ns (5.674ns logic, 4.262ns route)
+                                       (57.1% logic, 42.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1175 / 1174
+-------------------------------------------------------------------------
+Offset:              3.868ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       Inst_ftdi_driver/ftdi_dout_7 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to Inst_ftdi_driver/ftdi_dout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   0.824   0.763  rst_IBUF (rst_IBUF)
+     LUT3:I1->O            1   0.562   0.359  Inst_ftdi_driver/ftdi_dout_not0001_SW0 (N2)
+     LUT4:I3->O            8   0.561   0.643  Inst_ftdi_driver/ftdi_dout_not0001 (Inst_ftdi_driver/ftdi_dout_not0001)
+     FDE:CE                    0.156          Inst_ftdi_driver/ftdi_dout_0
+    ----------------------------------------
+    Total                      3.868ns (2.103ns logic, 1.765ns route)
+                                       (54.4% logic, 45.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 14
+-------------------------------------------------------------------------
+Offset:              6.327ns (Levels of Logic = 2)
+  Source:            Inst_rx_driver/sck_pulses_8 (FF)
+  Destination:       rx_mosi (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Inst_rx_driver/sck_pulses_8 to rx_mosi
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.495   0.517  Inst_rx_driver/sck_pulses_8 (Inst_rx_driver/sck_pulses_8)
+     LUT3:I1->O            1   0.562   0.357  Inst_rx_driver/Inst_Generic_SPI_FSM/MOSI1 (rx_mosi_OBUF)
+     OBUF:I->O                 4.396          rx_mosi_OBUF (rx_mosi)
+    ----------------------------------------
+    Total                      6.327ns (5.453ns logic, 0.874ns route)
+                                       (86.2% logic, 13.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 24.01 secs
+ 
+--> 
+
+Total memory usage is 324784 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  691 (   0 filtered)
+Number of infos    :   27 (   0 filtered)
+

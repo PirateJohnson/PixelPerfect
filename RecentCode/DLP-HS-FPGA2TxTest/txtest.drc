@@ -1,0 +1,8 @@
+Release 13.4 Drc O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Tue Jan 22 07:28:51 2013
+
+drc -z TxTest.ncd TxTest.pcf
+
+DRC detected 0 errors and 0 warnings.
