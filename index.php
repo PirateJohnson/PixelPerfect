@@ -9,6 +9,7 @@
 	<body>
 
 	<?php
+
 		// include the system resources
 		include 'sys_res/system.php';
 	
