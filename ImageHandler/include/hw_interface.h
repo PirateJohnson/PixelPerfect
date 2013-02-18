@@ -9,7 +9,7 @@
 **
 ** AUTHOR:
 ** Jonathan Lamb
-** jonlambusn@gmail.com
+** pixel.perfect.asic@gmail.com
 **
 ** CREATION DATE:
 ** 10 FEB 2013
@@ -17,7 +17,7 @@
 ** NOTES:
 ** I am hoping we won't have to implement any comm port timeout checks.
 ** Right now the timeout is set to 0.5 seconds, this should be more than
-** enought time to receive a frame.  
+** enough time to receive a frame.  
 **
 *******************************************************/
 

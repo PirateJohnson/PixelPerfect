@@ -9,7 +9,7 @@
 **
 ** AUTHOR:
 ** Jonathan Lamb
-** jonlambusn@gmail.com
+** pixel.perfect.asic@gmail.com
 **
 ** CREATION DATE:
 ** 10 FEB 2013
@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <opencv/cv.h>
 #include <opencv2/core/core_c.h>
 #include <opencv2/highgui/highgui_c.h>

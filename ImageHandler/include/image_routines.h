@@ -9,7 +9,7 @@
 **
 ** AUTHOR:
 ** Jonathan Lamb
-** jonlambusn@gmail.com
+** pixel.perfect.asic@gmail.com
 **
 ** CREATION DATE:
 ** 10 FEB 2013

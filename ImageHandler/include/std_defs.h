@@ -9,7 +9,7 @@
 **
 ** AUTHOR:
 ** Jonathan Lamb
-** jonlambusn@gmail.com
+** pixel.perfect.asic@gmail.com
 **
 ** CREATION DATE:
 ** 10 FEB 2013
@@ -66,7 +66,7 @@
 
 // the image file name strings
 // staging is what gets written to first
-// once complete then staging gets mv'd to current
+// once complete then staging gets mv'd to current to avoid interfering with other programs
 #define	IMAGE_STAGING_FILE	"staging-image.bmp"
 #define	IMAGE_CURRENT_FILE	"current-image.bmp"
 

@@ -9,7 +9,7 @@
 **
 ** AUTHOR:
 ** Jonathan Lamb
-** jonlambusn@gmail.com
+** pixel.perfect.asic@gmail.com
 **
 ** CREATION DATE:
 ** 10 FEB 2013
@@ -17,7 +17,7 @@
 ** NOTES:
 ** I am hoping we won't have to implement any comm port timeout checks.
 ** Right now the timeout is set to 0.5 seconds, this should be more than
-** enought time to receive a frame.  
+** enough time to receive a frame.  
 **
 *******************************************************/
 
@@ -37,7 +37,7 @@
 #include "../include/hw_interface.h"
 #include "../include/std_defs.h"
 
-// TODO - error checking *************8
+// TODO - error checking *************
 
 int close_device_comm( int* fd )
 {
@@ -63,14 +63,13 @@ int open_device_comm( int* fd, const char* dev_path )
 	// 8 data bits
 	// 1 stop
 	// no parity
-	// baud rate: 115,200
-	if( init_device_comm_interface( fd, B115200, 0 ) == HW_FAIL )
+	// baud rate: 2,000,000
+	// TESTING - need highest possible baud
+	// B2000000 - working
+	// B115200 - working
+	if( init_device_comm_interface( fd, B2000000, 0 ) == HW_FAIL )
 		return HW_FAIL;
-	
-	// TESTING
-	//system("stty -F /dev/ttyUSB0 115200 cs8 -cstopb -parity -icanon min 1 time 1");
-	//(*fd) = open("/dev/ttyUSB0", O_RDWR);
-	
+		
 	// enable blocking reads since we always want a full 'packet'
 	if( set_blocking( (*fd), 1 ) == HW_FAIL )
 		return HW_FAIL;
@@ -166,6 +165,7 @@ static int set_blocking( int fd, int should_block )
 }
 
 // TODO - add comments, error checks
+// having trouble forcing the 'read' to get all the bytes at once, using a loop structure instead, only getting ~12 bytes per read for some reason
 int load_device_image_data( int fd, char* image_data, int image_size, char* send_buff )
 {
 	int total_read = 0;
@@ -174,24 +174,28 @@ int load_device_image_data( int fd, char* image_data, int image_size, char* send
 	char* buffer = image_data;
 	
 #ifdef DEBUG_PRINT
+	
+	// time variables for calculating latency
+	struct timespec t1, t2;
+	double dtime = 0.0;
+	
 	printf( "%s\t:\t%s\t:\tloading device image data\n", HW_LOG_PREFIX, LOG_DEBUG );
 #endif	
 	
 #ifdef DEBUG_PRINT
 	printf( "%s\t:\t%s\t:\tsending out new frame command\n", HW_LOG_PREFIX, LOG_DEBUG );
 #endif
-	
-	// TODO - not sending out correctly...
-	
+		
 	// write out the 'send frame' command
 	write( fd, send_buff, 1 );
-	
-	// TESTING
-	usleep(100000);
-	
+		
 	
 #ifdef DEBUG_PRINT
 	printf( "%s\t:\t%s\t:\treading image data\n", HW_LOG_PREFIX, LOG_DEBUG );
+	
+	// get the start time
+	clock_gettime( CLOCK_MONOTONIC, &t1 );
+	
 #endif
 	
 	while( total_left > 0 )
@@ -199,7 +203,7 @@ int load_device_image_data( int fd, char* image_data, int image_size, char* send
 #ifdef DEBUG_PRINT
 		printf( "%s\t:\t%s\t:\tbytes read: %d\n", HW_LOG_PREFIX, LOG_DEBUG, total_read );
 #endif
-		current = read( fd, buffer, total_left );		//
+		current = read( fd, buffer, total_left );
 		
 		if( current <= 0 )
 		{
@@ -220,7 +224,14 @@ int load_device_image_data( int fd, char* image_data, int image_size, char* send
 	}
 		
 #ifdef DEBUG_PRINT
-	printf( "%s\t:\t%s\t:\tsuccessfully read image data - got %d bytes\n", HW_LOG_PREFIX, LOG_DEBUG, total_read );
+	
+	// get the end time
+	clock_gettime( CLOCK_MONOTONIC, &t2 );
+	
+	// get the time difference, in seconds
+	dtime = (t2.tv_sec - t1.tv_sec) + ((double) (t2.tv_nsec - t1.tv_nsec) / 1e9 );
+	
+	printf( "%s\t:\t%s\t:\tsuccessfully read image data - received %d bytes - latency: %f (sec)\n", HW_LOG_PREFIX, LOG_DEBUG, total_read, dtime );
 #endif
 	
 	return HW_PASS;
