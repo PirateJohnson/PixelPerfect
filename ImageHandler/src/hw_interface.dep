@@ -1,0 +1,2 @@
+hw_interface.o: src/hw_interface.c src/../include/hw_interface.h \
+ src/../include/std_defs.h

@@ -1,0 +1,2 @@
+image_routines.o: src/image_routines.c src/../include/image_routines.h \
+ src/../include/std_defs.h
