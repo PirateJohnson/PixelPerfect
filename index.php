@@ -9,7 +9,6 @@
 	<body>
 
 	<?php
-
 		// include the system resources
 		include 'sys_res/system.php';
 	
@@ -18,11 +17,18 @@
 		
 		// print the server time
 		// should use javascript to update
-		echo "<p>Current Server Time: " . $current_date . "</p>";
+		//echo "<p>Current Server Time: " . $current_date . "</p>";
+
+		include 'image_res/stream-capture.php';
+
+		// testing javascript server time
+		//include 'st-js.php';
+
+		echo "<p></p>";
 
 		// include the main action/command set form
 		include 'forms/main-action.html';
-		
+
 		// check the buttons
 		// TODO - not sure if this is the best method as I see errors in the error log...
 		$edit_button = $_POST['edit_registers_b'];
