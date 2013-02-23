@@ -1,0 +1,2 @@
+ftdi_interface.o: src/ftdi_interface.c src/../include/std_defs.h \
+ src/../include/ftdi_interface.h

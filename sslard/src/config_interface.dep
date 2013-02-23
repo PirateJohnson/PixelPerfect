@@ -1,0 +1,2 @@
+config_interface.o: src/config_interface.c \
+ src/../include/config_interface.h src/../include/std_defs.h
