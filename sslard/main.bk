@@ -1,0 +1,93 @@
+/******************************************************
+** FILE: main.c
+**
+** ABSTRACT:
+** 
+**
+** DOCUMENTS:
+** 
+**
+** AUTHOR:
+** Jonathan Lamb
+** pixel.perfect.asic@gmail.com
+**
+** CREATION DATE:
+** 10 FEB 2013
+**
+** NOTES:
+**
+*******************************************************/
+
+
+// includes
+#include <stdio.h>
+#include <stdlib.h>
+#include <opencv/cv.h>
+#include <opencv2/core/core_c.h>
+#include <opencv2/highgui/highgui_c.h>
+
+#include "../include/std_defs.h"
+#include "../include/config_interface.h"
+#include "../include/image_routines.h"
+#include "../include/ftdi_interface.h"
+
+
+/*******************************************************/
+/*************___GLOBAL_RESOURCES___********************/
+/*******************************************************/
+
+// the image device configuration structure
+// holds the image width, height, and pixel depth
+// values obtained through the image-settings.cfg config file
+static _DEVICE_CONFIG	dev_config;
+
+static _FTDI_DEVICE		ftdi_device;
+
+// the OpenCV image structure
+static IplImage*	output_image = NULL;
+
+
+/*******************************************************/
+/*******************___MAIN___**************************/
+/*******************************************************/
+int main( int argc, char** argv )
+{	
+	int i;
+	
+	// load the configuration structure with values from the config file
+	if( load_device_configuration( &dev_config, DEVICE_CONFIG_FILE ) == CONFIG_FAIL )
+		return SYS_FAIL;
+	
+	// allocate the resources for the new OpenCV image structure
+	if( load_new_image( &output_image, dev_config.image_width, dev_config.image_height ) == IMAGE_FAIL )
+		return SYS_FAIL;
+	
+	// open the ftdi device
+	if( open_ftdi_device( &ftdi_device, dev_config.vendor_id, dev_config.product_id, dev_config.baudrate, dev_config.interface ) == FTDI_FAIL )
+		return SYS_FAIL;
+	
+	// get 100 frames
+	for( i = 0; i < 100; i++ )
+	{
+		// grab device image data
+		if( load_ftdi_device_image_data( &ftdi_device, output_image->imageData, output_image->imageSize ) == FTDI_FAIL )
+			return SYS_FAIL;
+	}
+	
+	// close the ftdi device
+	if( close_ftdi_device( &ftdi_device ) == FTDI_FAIL )
+		return SYS_FAIL;
+	
+	// TESTING - load the image with white
+	//if( load_image_with_color( output_image, 250 ) == IMAGE_FAIL )
+	//	return SYS_FAIL;
+	
+	// save the new image data to the current image file
+	if( save_image_to_current( &output_image ) == IMAGE_FAIL )
+		return SYS_FAIL;
+	
+	if( release_image( &output_image ) == IMAGE_FAIL )
+		return SYS_FAIL;
+	
+	return 0;
+}

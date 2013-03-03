@@ -1,2 +1,2 @@
 main.o: src/main.c src/../include/std_defs.h \
- src/../include/daemon_interface.h
+ src/../include/daemon_interface.h src/../include/image_processing.h

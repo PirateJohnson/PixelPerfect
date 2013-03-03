@@ -43,6 +43,7 @@ int load_new_image( IplImage** image , int width, int height )
 {
 #ifdef DEBUG_PRINT
 	daemon_log( LOG_INFO, "%s : %s : loading new OpenCV image - width: %d - height: %d", IMAGE_LOG_PREFIX, LOG_DEBUGS, width, height );
+		
 #endif
 	
 	// create the OpenCV image
@@ -51,8 +52,7 @@ int load_new_image( IplImage** image , int width, int height )
 			IPL_DEPTH_8U,													// pixel depth
 			1																// channels
 			);
-	
-
+		
 	return IMAGE_PASS;
 }
 
@@ -60,7 +60,7 @@ int load_new_image( IplImage** image , int width, int height )
 int release_image( IplImage** image )
 {
 #ifdef DEBUG_PRINT
-	daemon_log( LOG_INFO, "%s : %s : releasing image data", IMAGE_LOG_PREFIX, LOG_DEBUGS );
+	daemon_log( LOG_INFO, "%s : %s : releasing image data", IMAGE_LOG_PREFIX, LOG_DEBUGS );	
 #endif
 	// release the OpenCV image data
 	cvReleaseImage( image );

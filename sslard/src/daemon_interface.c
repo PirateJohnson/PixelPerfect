@@ -150,8 +150,8 @@ int daemonize_init( const char command, int* status )
 	{
         int ret;		// return status
 
-        // wait for the return value passed from the daemon process - 10 seconds
-        if( ( ret = daemon_retval_wait(10) ) < 0 )
+        // wait for the return value passed from the daemon process - 20 seconds
+        if( ( ret = daemon_retval_wait(20) ) < 0 )
 		{
 			daemon_log( LOG_INFO, "%s : %s : could not receive a return value from daemon process, timed out: %s", DAEMON_LOG_PREFIX, LOG_ERROR, strerror(errno) );
 			(*status) = 255;
@@ -240,6 +240,9 @@ int daemonize_init( const char command, int* status )
 			{
 				daemon_log( LOG_INFO, "%s : %s : failed to load FTDI device image data", DAEMON_LOG_PREFIX, LOG_ERROR );
 			}	
+			
+			// TODO - add hooks to other image processing here **************************************************
+			// TODO - test with hooks in main to prevent starting the daemon
 			
 			// save the new image data to the current image file
 			if( save_image_to_current( &output_image ) == IMAGE_FAIL )
