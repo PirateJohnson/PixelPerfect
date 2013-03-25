@@ -7,8 +7,8 @@
 		<title>PixelPi Command Viewer</title>
 	
 		<style type-"text/css">
-			p {margin-left:20px;}
-			body {	color:purple; }
+			p { margin-left:20px; }
+			hr { color:purple; }
 		</style>
 	</head>
 	<body>
