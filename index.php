@@ -6,7 +6,7 @@
 	<head>
 		<title>PixelPi Command Viewer</title>
 	
-		<style type-"text/css">
+		<style type="text/css">
 			p { margin-left:20px; }
 			hr { color:purple; }
 		</style>
