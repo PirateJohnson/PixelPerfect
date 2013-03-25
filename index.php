@@ -5,6 +5,11 @@
 <html>
 	<head>
 		<title>PixelPi Command Viewer</title>
+	
+		<style type-"text/css">
+			p {margin-left:20px;}
+			body {	color:purple; }
+		</style>
 	</head>
 	<body>
 
