@@ -54,10 +54,6 @@
 #include "../include/image_processing.h"
 #include "../include/std_defs.h"
 
-// the tmp cam, will hook up to /dev/video0
-// TESTING
-static CvCapture* cam = NULL;
-
 
 // static prototypes
 static int load_training_data( _VISION_MODULE* vmod );
@@ -86,14 +82,13 @@ static IplImage* crop_to_new_image( const IplImage *img, const CvRect* region );
 int initialize_vision_module( _VISION_MODULE* vmod )
 {
 	int i;
-	
-	printf( "%s : %s : initializing vision module\n", VISION_LOG_PREFIX, LOG_INFOS );
+	daemon_log( LOG_INFO, "%s : %s : initializing vision module", VISION_LOG_PREFIX, LOG_INFOS );
 	
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT	
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to initialize vision module, vmod pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to initialize vision module, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -137,7 +132,7 @@ int initialize_vision_module( _VISION_MODULE* vmod )
 	
 	if( !vmod->face_cascade )
 	{
-		printf( "%s : %s : failed to initialize vision module, failed to load cascade file: %s\n", VISION_LOG_PREFIX, LOG_ERROR, (const char*) FACE_CASCADE_FILE );
+		daemon_log( LOG_INFO, "%s : %s : failed to initialize vision module, failed to load cascade file: %s", VISION_LOG_PREFIX, LOG_ERROR, (const char*) FACE_CASCADE_FILE );
 		return VISION_FAIL;
 	}	
 	
@@ -158,11 +153,7 @@ int initialize_vision_module( _VISION_MODULE* vmod )
 	// FIX references that should be part of vmod not globals
 	if( vmod->num_eigens > 0 )
 		vmod->projected_test_face = (float *) cvAlloc( vmod->num_eigens * sizeof(float) );
-	
-	// Create a GUI window for the user to see the cam image.
-	// TESTING
-	cvNamedWindow( "DEBUG OUTPUT", CV_WINDOW_AUTOSIZE );
-	
+		
 	// get the start time
 	vmod->face_rec_start_time = (double) cvGetTickCount();
 		
@@ -173,14 +164,13 @@ int initialize_vision_module( _VISION_MODULE* vmod )
 int release_vision_module( _VISION_MODULE* vmod )
 {
 	int i;
-	
-	printf( "%s : %s : releasing vision module\n", VISION_LOG_PREFIX, LOG_INFOS );
+	daemon_log( LOG_INFO, "%s : %s : releasing vision module", VISION_LOG_PREFIX, LOG_INFOS );
 	
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to release vision module, vmod pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to release vision module, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -245,7 +235,7 @@ int release_vision_module( _VISION_MODULE* vmod )
 	
 	// free the cam and memory resources used
 	// TESTING
-	cvReleaseCapture( &cam );
+	//cvReleaseCapture( &cam );
 				
 	return VISION_PASS;
 }
@@ -255,23 +245,23 @@ int detect_face( _VISION_MODULE* vmod, const IplImage* input_image, int* found_f
 {
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT
-	printf( "%s : %s : performing face detection\n", VISION_LOG_PREFIX, LOG_DEBUGS );
+	daemon_log( LOG_INFO, "%s : %s : performing face detection", VISION_LOG_PREFIX, LOG_DEBUGS );
 	
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to perform face detection, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face detection, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !input_image )
 	{
-		printf( "%s : %s : failed to perform face detection, input pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face detection, input pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !found_face )
 	{
-		printf( "%s : %s : failed to perform face detection, found_face pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face detection, found_face pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -292,8 +282,9 @@ int detect_face( _VISION_MODULE* vmod, const IplImage* input_image, int* found_f
 	// check for face detected
 	if( vmod->face_rect.width > 0 )
 	{
-		printf( "%s : %s : found face\n", VISION_LOG_PREFIX, LOG_INFOS );
-		
+#ifdef DEBUG_PRINT
+		daemon_log( LOG_INFO, "%s : %s : found face", VISION_LOG_PREFIX, LOG_INFOS );
+#endif
 		(*found_face) = 1;
 		
 		// draw the detected face region
@@ -398,17 +389,17 @@ int enable_training( _VISION_MODULE* vmod, const char* name )
 {	
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT
-	printf( "%s : %s : enabling training mode - name: %s\n", VISION_LOG_PREFIX, LOG_DEBUGS, name );
+	daemon_log( LOG_INFO, "%s : %s : enabling training mode - name: %s", VISION_LOG_PREFIX, LOG_DEBUGS, name );
 	
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to enable training mode, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to enable training mode, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !name )
 	{
-		printf( "%s : %s : failed to enable training mode, name pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to enable training mode, name pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -427,19 +418,16 @@ int enable_training( _VISION_MODULE* vmod, const char* name )
 // name list related
 static void delete_node( gpointer data )
 {
-	//printf( "TESTING - deleting %s from list\n", (const char*) data );
 	g_free( data );
 	data = NULL;
 }
 
 static void append_string( GList** list, const char* str )
 {
-	//printf( "TESTING - appending %s to list\n", str );
 	char* tmp = (char*) malloc( sizeof(char) * strlen(str) + 1 );
 	strcpy( tmp, str );
 	(*list) = g_list_append( (*list), tmp );
 	tmp = NULL;	
-	//printf( "TESTING - new list size: %d\n", g_list_length( (*list) ) );
 }
 
 int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* recognized_face )
@@ -453,23 +441,23 @@ int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* reco
 	
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT
-	printf( "%s : %s : performing face recognition\n", VISION_LOG_PREFIX, LOG_DEBUGS );
+	daemon_log( LOG_INFO, "%s : %s : performing face recognition", VISION_LOG_PREFIX, LOG_DEBUGS );
 	
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to perform face recognition, vmod pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face recognition, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !input_image )
 	{
-		printf( "%s : %s : failed to perform face recognition, input_image pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face recognition, input_image pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !recognized_face )
 	{
-		printf( "%s : %s : failed to perform face recognition, recognized_face pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face recognition, recognized_face pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}	
 #endif
@@ -477,7 +465,7 @@ int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* reco
 	// check to make sure a face was actually detected
 	if( vmod->face_rect.width < 0 )
 	{
-		printf( "%s : %s : failed to perform face recognition, no face has been detected in the input image - returning\n", VISION_LOG_PREFIX, LOG_WARN );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face recognition, no face has been detected in the input image - returning", VISION_LOG_PREFIX, LOG_WARN );
 		return VISION_PASS;
 	}
 	
@@ -511,9 +499,9 @@ int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* reco
 		n_index = get_nearest_index( vmod, vmod->projected_test_face, &confidence );
 				
 		i_index = (int) (vmod->training_person_nums->data.i)[n_index];
-
-		printf( "%s : %s : most likely person in image is: %s -- confidence: %f\n", VISION_LOG_PREFIX, LOG_INFOS, (char*) g_list_nth_data( vmod->person_names, (i_index-1) ) , confidence );
-		
+#ifdef DEBUG_PRINT
+		daemon_log( LOG_INFO, "%s : %s : most likely person in image is: %s -- confidence: %f", VISION_LOG_PREFIX, LOG_INFOS, (char*) g_list_nth_data( vmod->person_names, (i_index-1) ) , confidence );
+#endif
 		// draw the metrics on the image
 	
 		cvInitFont( &font,CV_FONT_HERSHEY_PLAIN, 1.0, 1.0, 0,1,CV_AA );
@@ -532,7 +520,7 @@ int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* reco
 	{
 		snprintf( tmp_buff, sizeof(tmp_buff)-1, FACE_DATA_DIR_FORMATA, vmod->num_persons+1, vmod->training_name, vmod->new_person_faces+1 );
 		
-		printf( "%s : %s : storing current face: %s into image %s\n", VISION_LOG_PREFIX, LOG_INFOS, vmod->training_name, tmp_buff );
+		daemon_log( LOG_INFO, "%s : %s : storing current face: %s into image %s", VISION_LOG_PREFIX, LOG_INFOS, vmod->training_name, tmp_buff );
 		
 		cvSaveImage(tmp_buff, vmod->equalized_img, NULL);
 		
@@ -540,7 +528,7 @@ int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* reco
 		
 		if( vmod->new_person_faces >= (int) TRAINING_SET_SIZE )
 		{
-			printf( "%s : %s : finished training images for: %s -- trained %d images -- storing in: %s\n", VISION_LOG_PREFIX, LOG_INFOS, (const char*) vmod->training_name,
+			daemon_log( LOG_INFO, "%s : %s : finished training images for: %s -- trained %d images -- storing in: %s", VISION_LOG_PREFIX, LOG_INFOS, (const char*) vmod->training_name,
 					(int) TRAINING_SET_SIZE,  (const char*) FACE_TRAINING_FILE );
 			
 			vmod->save_next_face = 0;
@@ -586,7 +574,7 @@ int recognize_face( _VISION_MODULE* vmod, const IplImage* input_image, int* reco
 		}
 	}	
 	else
-		printf( "%s : %s : failed to perform face recognition, no entries in the database\n", VISION_LOG_PREFIX, LOG_WARN );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform face recognition, no entries in the database", VISION_LOG_PREFIX, LOG_WARN );
 	
 	return VISION_PASS;
 }
@@ -609,19 +597,19 @@ static int _detect_face( const IplImage* input_image, CvRect* face_rect, const C
 #ifdef DEBUG_PRINT	
 	if( !input_image )
 	{
-		printf( "%s : %s : failed to detect face in IplImage, input_iamge pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to detect face in IplImage, input_iamge pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !face_rect )
 	{
-		printf( "%s : %s : failed to detect face in IplImage, face_rec pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to detect face in IplImage, face_rec pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !cascade )
 	{
-		printf( "%s : %s : failed to detect face in IplImage, cascade pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to detect face in IplImage, cascade pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -649,10 +637,11 @@ static int _detect_face( const IplImage* input_image, CvRect* face_rect, const C
 	t = (double) cvGetTickCount() - t;
 	
 	// print a message
-	// TODO - debug?
-	printf( "%s : %s : detection latency(ms): %f -- objects found: %d\n", VISION_LOG_PREFIX, LOG_INFOS,
+#ifdef DEBUG_PRINT
+	daemon_log( LOG_INFO, "%s : %s : detection latency(ms): %f -- objects found: %d", VISION_LOG_PREFIX, LOG_INFOS,
 			t/((double)cvGetTickFrequency()*1000.0), rects->total );
-
+#endif
+	
 	// get the first detected face (the biggest)
 	if( rects->total > 0 )
 	{
@@ -691,11 +680,11 @@ static int load_training_data( _VISION_MODULE* vmod )
 	
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT
-	printf( "%s : %s : loading training data from: %s\n", VISION_LOG_PREFIX, LOG_DEBUGS, FACE_DB_FILE );
+	daemon_log( LOG_INFO, "%s : %s : loading training data from: %s", VISION_LOG_PREFIX, LOG_DEBUGS, FACE_DB_FILE );
 	
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to load training data, vmod pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training data, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -705,8 +694,9 @@ static int load_training_data( _VISION_MODULE* vmod )
 	db_file_storage = cvOpenFileStorage( (const char*) FACE_DB_FILE, 0, CV_STORAGE_READ, 0 );
 	
 	// check for failure
-	if( !db_file_storage ) {
-		printf( "%s : %s : failed to load training data, failed to open the database file: %s\n", VISION_LOG_PREFIX, LOG_ERROR, FACE_DB_FILE );
+	if( !db_file_storage )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to load training data, failed to open the database file: %s", VISION_LOG_PREFIX, LOG_ERROR, FACE_DB_FILE );
 		return VISION_FAIL;
 	}
 
@@ -721,7 +711,7 @@ static int load_training_data( _VISION_MODULE* vmod )
 	// check if db is empty
 	if( vmod->num_persons == 0 )
 	{
-		printf( "%s : %s : no entries found the database file - returning\n", VISION_LOG_PREFIX, LOG_INFOS );
+		daemon_log( LOG_INFO, "%s : %s : no entries found the database file - returning", VISION_LOG_PREFIX, LOG_INFOS );
 		
 		// release the file-storage interface
 		cvReleaseFileStorage( &db_file_storage );
@@ -753,7 +743,7 @@ static int load_training_data( _VISION_MODULE* vmod )
 	// check for failure
 	if( tmp_mat == NULL )
 	{
-		printf( "%s : %s : failed to load training data, failed to look up training matrix in db\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training data, failed to look up training matrix in db", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	else
@@ -770,7 +760,7 @@ static int load_training_data( _VISION_MODULE* vmod )
 	// check for failure
 	if( tmp_mat == NULL )
 	{
-		printf( "%s : %s : failed to load training data, failed to look up eigen matrix in db\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training data, failed to look up eigen matrix in db", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	else
@@ -787,7 +777,7 @@ static int load_training_data( _VISION_MODULE* vmod )
 	// check for failure
 	if( tmp_mat == NULL )
 	{
-		printf( "%s : %s : failed to load training data, failed to look up projected training face matrix in db\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training data, failed to look up projected training face matrix in db", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	else
@@ -803,7 +793,7 @@ static int load_training_data( _VISION_MODULE* vmod )
 	// check for failure
 	if( tmp_img == NULL )
 	{
-		printf( "%s : %s : failed to load training data, failed to look up average training image in db\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training data, failed to look up average training image in db", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	else
@@ -827,7 +817,7 @@ static int load_training_data( _VISION_MODULE* vmod )
 		// check for failure
 		if( tmp_img == NULL )
 		{
-			printf( "%s : %s : failed to load training data, failed to look up eigen vector image: %d in db\n", VISION_LOG_PREFIX, LOG_ERROR, i );
+			daemon_log( LOG_INFO, "%s : %s : failed to load training data, failed to look up eigen vector image: %d in db", VISION_LOG_PREFIX, LOG_ERROR, i );
 			return VISION_FAIL;
 		}
 		else
@@ -840,13 +830,13 @@ static int load_training_data( _VISION_MODULE* vmod )
 	// release the file-storage interface
 	cvReleaseFileStorage( &db_file_storage );
 
-	printf( "%s : %s : loaded training data -- number of images: %d -- number of people in db: %d\n", VISION_LOG_PREFIX, LOG_INFOS,
+	daemon_log( LOG_INFO, "%s : %s : loaded training data -- number of images: %d -- number of people in db: %d", VISION_LOG_PREFIX, LOG_INFOS,
 		vmod->num_train_images, vmod->num_persons );
 	
 	// print each person loaded
 	for( i = 0; i < vmod->num_persons; i++ )
 	{
-		printf( "%s : %s : loaded person: %s\n", VISION_LOG_PREFIX, LOG_INFOS, (const char*) g_list_nth_data( vmod->person_names, i ) );
+		daemon_log( LOG_INFO, "%s : %s : loaded person: %s", VISION_LOG_PREFIX, LOG_INFOS, (const char*) g_list_nth_data( vmod->person_names, i ) );
 	}			
 	
 	return VISION_PASS;	
@@ -859,14 +849,13 @@ static int load_training_data( _VISION_MODULE* vmod )
 static int retrain_online( _VISION_MODULE* vmod )
 {
 	int i;
-	
-	printf( "%s : %s : retraining database online\n", VISION_LOG_PREFIX, LOG_INFOS );
+	daemon_log( LOG_INFO, "%s : %s : retraining database online", VISION_LOG_PREFIX, LOG_INFOS );
 
 	// check the pointer if debugging
 #ifdef DEBUG_PRINT
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to retrain database, vmod pointer is null\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to retrain database, vmod pointer is null", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -915,7 +904,7 @@ static int retrain_online( _VISION_MODULE* vmod )
 	// free the projected training image matrix
 	cvFree( &vmod->projected_train_face_img );
 
-	printf( "%s : %s : retraining database with new person\n", VISION_LOG_PREFIX, LOG_INFOS );
+	daemon_log( LOG_INFO, "%s : %s : retraining database with new person", VISION_LOG_PREFIX, LOG_INFOS );
 	
 	// retrain from the new data
 	if( learn_from_file( vmod, FACE_TRAINING_FILE ) == VISION_FAIL )
@@ -934,19 +923,19 @@ static int learn_from_file( _VISION_MODULE* vmod, const char *training_file )
 {
 	int i, offset;
 
-	printf( "%s : %s : loading training images from: %s\n", VISION_LOG_PREFIX, LOG_INFOS, training_file );
+	daemon_log( LOG_INFO, "%s : %s : loading training images from: %s", VISION_LOG_PREFIX, LOG_INFOS, training_file );
 	
 	// check if debugging
 #ifdef DEBUG_PRINT
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to load training images, vmod pointer is NULL\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training images, vmod pointer is NULL", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !training_file )
 	{
-		printf( "%s : %s : failed to load training images, training_file pointer is NULL\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load training images, training_file pointer is NULL", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -955,12 +944,12 @@ static int learn_from_file( _VISION_MODULE* vmod, const char *training_file )
 	if( load_face_data_file( vmod, training_file ) == VISION_FAIL )
 		return VISION_FAIL;
 	
-	printf( "%s : %s : number of images loaded: %d\n", VISION_LOG_PREFIX, LOG_INFOS, vmod->num_train_images);
+	daemon_log( LOG_INFO, "%s : %s : number of images loaded: %d", VISION_LOG_PREFIX, LOG_INFOS, vmod->num_train_images);
 
 	// check if enough entries exist
 	if( vmod->num_train_images < 2 )
 	{
-		printf( "%s : %s : need at least two entries loaded in order to perform PCA, current: %d - returning\n", VISION_LOG_PREFIX, LOG_WARN, vmod->num_train_images );
+		daemon_log( LOG_INFO, "%s : %s : need at least two entries loaded in order to perform PCA, current: %d - returning", VISION_LOG_PREFIX, LOG_WARN, vmod->num_train_images );
 		return VISION_PASS;
 	}
 
@@ -1003,13 +992,13 @@ static int perform_PCA( _VISION_MODULE* vmod )
 	CvTermCriteria PCA_calc_limit;
 	CvSize img_size;
 	
-	printf( "%s : %s : performing PCA\n", VISION_LOG_PREFIX, LOG_INFOS );
+	daemon_log( LOG_INFO, "%s : %s : performing PCA", VISION_LOG_PREFIX, LOG_INFOS );
 	
 	// check if debugging
 #ifdef DEBUG_PRINT
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to perform PCA, vmod pointer is NULL\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to perform PCA, vmod pointer is NULL", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -1061,13 +1050,13 @@ static int store_training_data( _VISION_MODULE* vmod )
 	CvFileStorage* file_storage = NULL;
 	int i;
 	
-	printf( "%s : %s : storing training data to database file: %s\n", VISION_LOG_PREFIX, LOG_INFOS, FACE_DB_FILE );
+	daemon_log( LOG_INFO, "%s : %s : storing training data to database file: %s", VISION_LOG_PREFIX, LOG_INFOS, FACE_DB_FILE );
 	
 	// check if debugging
 #ifdef DEBUG_PRINT
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to store training data, vmod pointer is NULL\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to store training data, vmod pointer is NULL", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -1125,19 +1114,19 @@ static int load_face_data_file( _VISION_MODULE* vmod, const char* filename)
 	int face_index = 0, num_faces=0;
 	int i;
 	
-	printf( "%s : %s : loading face data file: %s\n", VISION_LOG_PREFIX, LOG_INFOS, filename );
+	daemon_log( LOG_INFO, "%s : %s : loading face data file: %s", VISION_LOG_PREFIX, LOG_INFOS, filename );
 	
 	// check if debugging
 #ifdef DEBUG_PRINT
 	if( !vmod )
 	{
-		printf( "%s : %s : failed to load face data file, vmod pointer is NULL\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load face data file, vmod pointer is NULL", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 	
 	if( !filename )
 	{
-		printf( "%s : %s : failed to load face data file, filename pointer is NULL\n", VISION_LOG_PREFIX, LOG_ERROR );
+		daemon_log( LOG_INFO, "%s : %s : failed to load face data file, filename pointer is NULL", VISION_LOG_PREFIX, LOG_ERROR );
 		return VISION_FAIL;
 	}
 #endif
@@ -1145,7 +1134,7 @@ static int load_face_data_file( _VISION_MODULE* vmod, const char* filename)
 	// open the input file
 	if( !(file_handle = fopen(filename, "r")) )
 	{
-		printf( "%s : %s : failed to load face data file, failed to get a file handle on: %s\n", VISION_LOG_PREFIX, LOG_ERROR, filename );
+		daemon_log( LOG_INFO, "%s : %s : failed to load face data file, failed to get a file handle on: %s", VISION_LOG_PREFIX, LOG_ERROR, filename );
 		return VISION_FAIL;
 	}
 
@@ -1198,7 +1187,7 @@ static int load_face_data_file( _VISION_MODULE* vmod, const char* filename)
 		// check for failure
 		if( !vmod->face_image_list[face_index] )
 		{
-			printf( "%s : %s : failed to load face data file, failed to image file: %s\n", VISION_LOG_PREFIX, LOG_ERROR, img_file_name );
+			daemon_log( LOG_INFO, "%s : %s : failed to load face data file, failed to image file: %s", VISION_LOG_PREFIX, LOG_ERROR, img_file_name );
 			return VISION_FAIL;
 		}
 	}
@@ -1206,11 +1195,11 @@ static int load_face_data_file( _VISION_MODULE* vmod, const char* filename)
 	// close the file
 	fclose( file_handle );
 
-	printf( "%s : %s : loaded face data - images: %d - people: %d\n", VISION_LOG_PREFIX, LOG_INFOS, num_faces, vmod->num_persons );
+	daemon_log( LOG_INFO, "%s : %s : loaded face data - images: %d - people: %d", VISION_LOG_PREFIX, LOG_INFOS, num_faces, vmod->num_persons );
 
 	for( i = 0; i < vmod->num_persons; i++ )
 	{
-		printf( "%s : %s : loaded face data for person: %s\n", VISION_LOG_PREFIX, LOG_INFOS, (char *) g_list_nth_data( vmod->person_names, i ) );
+		daemon_log( LOG_INFO, "%s : %s : loaded face data for person: %s", VISION_LOG_PREFIX, LOG_INFOS, (char *) g_list_nth_data( vmod->person_names, i ) );
 	}
 
 	vmod->num_train_images = num_faces;
@@ -1218,90 +1207,3 @@ static int load_face_data_file( _VISION_MODULE* vmod, const char* filename)
 	return VISION_PASS;
 }
 
-
-
-
-
-//******************************************** TESTING ***********************************************
-// Grab the next cam frame. Waits until the next frame is ready,
-// and provides direct access to it, so do NOT modify the returned image or free it!
-// Will automatically initialize the cam on the first frame.
-IplImage* get_image_from_cam(void)
-{
-	IplImage *frame;
-
-	// If the cam hasn't been initialized, then open it.
-	if (!cam) {
-		printf("Acessing the cam ...\n");
-		cam = cvCaptureFromCAM( 0 );
-		if (!cam) {
-			printf("ERROR in get_image_from_cam(): Couldn't access the cam.\n");
-			exit(1);
-		}
-		// Try to set the cam resolution
-		cvSetCaptureProperty( cam, CV_CAP_PROP_FRAME_WIDTH, 320 );
-		cvSetCaptureProperty( cam, CV_CAP_PROP_FRAME_HEIGHT, 240 );
-		sleep(1);
-		frame = cvQueryFrame( cam );	// get the first frame, to make sure the cam is initialized.
-		if (frame) {
-			printf("Got a cam using a resolution of %dx%d.\n", (int)cvGetCaptureProperty( cam, CV_CAP_PROP_FRAME_WIDTH), (int)cvGetCaptureProperty( cam, CV_CAP_PROP_FRAME_HEIGHT) );
-		}
-	}
-
-	frame = cvQueryFrame( cam );
-	if (!frame) {
-		fprintf(stderr, "ERROR in recognizeFromCam(): Could not access the cam or video file.\n");
-		exit(1);
-	}
-	return frame;
-}
-
-// Return a new image that is always greyscale, whether the input image was RGB or Greyscale.
-// Remember to free the returned image using cvReleaseImage() when finished.
-IplImage* convert_to_grayscale(const IplImage *imageSrc)
-{
-	IplImage *imageGrey;
-	// Either convert the image to greyscale, or make a copy of the existing greyscale image.
-	// This is to make sure that the user can always call cvReleaseImage() on the output, whether it was greyscale or not.
-	if (imageSrc->nChannels == 3) {
-		imageGrey = cvCreateImage( cvGetSize(imageSrc), IPL_DEPTH_8U, 1 );
-		cvCvtColor( imageSrc, imageGrey, CV_BGR2GRAY );
-	}
-	else {
-		imageGrey = cvCloneImage(imageSrc);
-	}
-	return imageGrey;
-}
-
-// Creates a new image copy that is of a desired size.
-// Remember to free the new image later.
-IplImage* resize_image(const IplImage *origImg, int newWidth, int newHeight)
-{
-	IplImage *outImg = 0;
-	int origWidth;
-	int origHeight;
-	if (origImg) {
-		origWidth = origImg->width;
-		origHeight = origImg->height;
-	}
-	if (newWidth <= 0 || newHeight <= 0 || origImg == 0 || origWidth <= 0 || origHeight <= 0) {
-		printf("ERROR in resizeImage: Bad desired image size of %dx%d\n.", newWidth, newHeight);
-		exit(1);
-	}
-
-	// Scale the image to the new dimensions, even if the aspect ratio will be changed.
-	outImg = cvCreateImage(cvSize(newWidth, newHeight), origImg->depth, origImg->nChannels);
-	if (newWidth > origImg->width && newHeight > origImg->height) {
-		// Make the image larger
-		cvResetImageROI((IplImage*)origImg);
-		cvResize(origImg, outImg, CV_INTER_LINEAR);	// CV_INTER_CUBIC or CV_INTER_LINEAR is good for enlarging
-	}
-	else {
-		// Make the image smaller
-		cvResetImageROI((IplImage*)origImg);
-		cvResize(origImg, outImg, CV_INTER_AREA);	// CV_INTER_AREA is good for shrinking / decimation, but bad at enlarging.
-	}
-
-	return outImg;
-}
-//******************************************** TESTING ***********************************************

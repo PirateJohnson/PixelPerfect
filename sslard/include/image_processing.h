@@ -109,6 +109,7 @@ typedef struct
 	
 	// the name of the current training image identity
 	const char*						training_name;
+	
 } _VISION_MODULE;
 
 

@@ -41,6 +41,7 @@
 #include "../include/std_defs.h"
 #include "../include/ftdi_interface.h"
 
+// TODO - need a timeout!
 
 // load ftdi device image data from device
 int load_ftdi_device_image_data( _FTDI_DEVICE* ftdi_device, char* image_data, int image_size )
@@ -56,7 +57,7 @@ int load_ftdi_device_image_data( _FTDI_DEVICE* ftdi_device, char* image_data, in
 	int read_count = 0;		// count the number of ftdi_read issued before actually receiving data
 	static int frame = 0;
 	
-	daemon_log( LOG_INFO, "%s : %s : loading FTDI device image data", FTDI_LOG_PREFIX, LOG_DEBUGS );
+	//daemon_log( LOG_INFO, "%s : %s : loading FTDI device image data", FTDI_LOG_PREFIX, LOG_DEBUGS );
 	
 	if( !ftdi_device )
 	{
@@ -69,10 +70,16 @@ int load_ftdi_device_image_data( _FTDI_DEVICE* ftdi_device, char* image_data, in
 		daemon_log( LOG_INFO, "%s : %s : failed to load device image data, image_data pointer is null", FTDI_LOG_PREFIX, LOG_ERROR );
 		return FTDI_FAIL;
 	}
+	
+	//daemon_log( LOG_INFO, "%s : %s : writing FTDI send command", FTDI_LOG_PREFIX, LOG_DEBUGS );
 #endif
 	
 	// write the 'send new frame' command
 	ftdi_ret = ftdi_write_data( &ftdi_device->context, cmd_buffer, sizeof(cmd_buffer) );
+	
+#ifdef DEBUG_PRINT
+	//daemon_log( LOG_INFO, "%s : %s : waiting for FTDI response", FTDI_LOG_PREFIX, LOG_DEBUGS );
+#endif
 	
 	// check for failure
 	if( ftdi_ret < 0 )
@@ -99,8 +106,20 @@ int load_ftdi_device_image_data( _FTDI_DEVICE* ftdi_device, char* image_data, in
 #ifdef DEBUG_PRINT
 		// increment the read command counter
 		read_count++;
+
+		// TESTING
+		if( read_count > 300 )
+		{
+			daemon_log( LOG_INFO, "%s : %s : request for data exceeded 300, timing out", FTDI_LOG_PREFIX, LOG_ERROR );
+			return FTDI_FAIL;
+		}
 #endif
 		
+		
+#ifdef DEBUG_PRINT
+		//daemon_log( LOG_INFO, "%s : %s : waiting for FTDI data read: current size: %d", FTDI_LOG_PREFIX, LOG_DEBUGS, ftdi_ret );
+#endif
+
 		ftdi_ret = ftdi_read_data( &ftdi_device->context, (unsigned char*) image_data, image_size );
 		
 			// check for failure

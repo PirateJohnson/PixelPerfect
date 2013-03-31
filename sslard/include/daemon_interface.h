@@ -27,6 +27,10 @@
 #ifndef DAEMON_INTERFACE_H
 #define	DAEMON_INTERFACE_H
 
+// TODO - add docs for new methods
+
+int run_gui_display();
+
 /*------------------------------------------------------------------------------
  *	\description		This function initializes the daemon interface. This
  *						includes properly detecting whether or not the daemon

@@ -43,14 +43,8 @@
 #include "../include/std_defs.h"
 #include "../include/daemon_interface.h"
 
-// TESTING
-#include "../include/image_processing.h"
-#include <opencv/cv.h>
-#include <opencv2/core/core_c.h>
-#include <opencv2/highgui/highgui_c.h>
-#include <opencv2/core/types_c.h>
 
-static _VISION_MODULE test_vis;
+//static _VISION_MODULE test_vis;
 
 
 /*******************************************************/
@@ -59,13 +53,14 @@ static _VISION_MODULE test_vis;
 int main( int argc, char** argv )
 {		
 	int daemon_status = 0;
-	int i;
-	
-	// TESTING - disable daemon while testing face rec.
-	
+		
 	// start the daemon process if not already started or kill the daemon if running
-	//if( daemonize_init( get_arg_command( argc, argv ), &daemon_status ) == DAEM_FAIL )
-	//	return SYS_FAIL;
+	if( daemonize_init( get_arg_command( argc, argv ), &daemon_status ) == DAEM_FAIL )
+		return SYS_FAIL;
+	
+	
+/*	
+	goto RETS;
 	
 	// TESTING
 	
@@ -76,9 +71,9 @@ int main( int argc, char** argv )
 		goto TEST;
 	}
 	
+		
 	
-	
-	for( i = 0; i < 125; i++ )
+	for( i = 0; i < 200; i++ )
 	{
 		//printf( "\nTESTING - LOOP START\n" );
 		IplImage* tmp = NULL;
@@ -155,6 +150,8 @@ TEST:
 	
 	return 0;
 	
+*/
+//RETS:	
 	
 	
 	return SYS_PASS;

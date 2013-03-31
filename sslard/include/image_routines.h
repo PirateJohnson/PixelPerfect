@@ -27,6 +27,33 @@
 #ifndef IMAGE_ROUTINES_H
 #define	IMAGE_ROUTINES_H
 
+#include <opencv/cv.h>
+#include <opencv2/core/core_c.h>
+#include <opencv2/highgui/highgui_c.h>
+#include <opencv2/core/types_c.h>
+
+// TESTING - struct to hold window/capture related data
+typedef struct
+{
+	// capture device if using a webcam to get image data, testing purposes
+	// will hook up to /dev/video0
+	CvCapture* camera;
+	
+	
+} _DISPLAY_DEV;
+
+// TODO - doc new methods
+
+int init_display_device( _DISPLAY_DEV* display_dev );
+
+int release_display_device( _DISPLAY_DEV* display_dev );
+
+int show_image_to_window( _DISPLAY_DEV* display_dev, IplImage* image );
+
+int get_image_from_display_device( _DISPLAY_DEV* display_dev, IplImage** cam_image );
+
+
+
 /*------------------------------------------------------------------------------
  *	\description		This function loads a new OpenCV IplImage given
  *						a width and height. The resources must be released when

@@ -29,7 +29,8 @@ CC	= gcc
 CCFLAGS = -std=gnu99 -Wall 
 LDFLAGS = 
 LIBS    = -lftdi -ldaemon -lm `pkg-config --cflags --libs opencv` `pkg-config --cflags libconfig` `pkg-config --libs libconfig` `pkg-config --cflags --libs glib-2.0`
-INCLUDE = -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+#INCLUDE = -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+INCLUDE = -I/usr/include/glib-2.0 -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include
 # NOTE: glib is different for rpi, ARM
 
 .PHONY: all clean distclean 

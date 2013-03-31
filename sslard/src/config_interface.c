@@ -28,6 +28,7 @@
 #include <stdio.h>
 #include <libconfig.h>
 #include <libdaemon/dlog.h>
+#include <string.h>
 #include "../include/config_interface.h"
 #include "../include/std_defs.h"
 
@@ -167,8 +168,8 @@ int load_device_configuration( _DEVICE_CONFIG* dev_config, const char* config_fi
 	daemon_log( LOG_INFO, "%s : %s : image width: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->image_width );
 	daemon_log( LOG_INFO, "%s : %s : image height: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->image_height );
 	daemon_log( LOG_INFO, "%s : %s : pixel depth: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->pixel_depth );
-	daemon_log( LOG_INFO, "%s : %s : Vendor ID: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->vendor_id );
-	daemon_log( LOG_INFO, "%s : %s : Product ID: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->product_id );
+	daemon_log( LOG_INFO, "%s : %s : Vendor ID: %x", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->vendor_id );
+	daemon_log( LOG_INFO, "%s : %s : Product ID: %x", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->product_id );
 	daemon_log( LOG_INFO, "%s : %s : Baudrate: %u", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->baudrate );
 	daemon_log( LOG_INFO, "%s : %s : Interface: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->interface );
 #endif
@@ -180,6 +181,51 @@ int load_device_configuration( _DEVICE_CONFIG* dev_config, const char* config_fi
 				dev_config->pixel_depth, SUPPORTED_PIXEL_DEPTH );
 		return CONFIG_FAIL;
 	}
+	
+	return CONFIG_PASS;
+}
+
+
+// TODO - error check/msg
+int write_new_train_file( const char* name )
+{
+	//int ret = -1;
+	FILE* fp = NULL;
+	char tmp[256] = { 0 };
+	
+	strcpy( tmp, name );
+	
+	strcat( tmp, "\n" );
+	
+	fp = fopen( DAEMON_TRAIN_FILE, "w+" );
+	
+	(void)  fprintf( fp, name );
+	
+	fclose( fp );
+	fp = NULL;
+	
+	return CONFIG_PASS;
+}
+
+int read_new_train_file( char* name_storage )
+{
+	//int ret = -1;
+	FILE* fp = NULL;
+	char tmp[256] = { 0 };
+	
+	fp = fopen( DAEMON_TRAIN_FILE, "r+" );
+	
+	(void) fgets( tmp, 256, fp );
+	
+	fclose( fp );
+	fp = NULL;
+	
+	if( strlen( tmp ) > 1 )
+	{
+		strcpy( name_storage, tmp );
+	}
+	else
+		name_storage[0] = '\0';
 	
 	return CONFIG_PASS;
 }
