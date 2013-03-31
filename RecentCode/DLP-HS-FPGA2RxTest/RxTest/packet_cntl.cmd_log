@@ -1,1 +1,0 @@
-vhdtdtfi -prj RxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/packet_cntl.vhi" -module packet_cntl -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work packet_cntl.vhd 

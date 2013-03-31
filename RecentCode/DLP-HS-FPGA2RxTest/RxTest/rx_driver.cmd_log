@@ -1,2 +1,0 @@
-vhdtdtfi -prj RxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/rx_driver.vhi" -module rx_driver -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Generic_SPI_FSM.vhd -lib work rx_driver.vhd 
-vhdtdtfi -prj RxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/rx_driver.vhi" -module rx_driver -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Generic_SPI_FSM.vhd -lib work rx_driver.vhd 

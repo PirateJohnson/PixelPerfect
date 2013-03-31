@@ -1,5 +1,0 @@
-vhdl work "C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2RxTest\RxTest\Generic_SPI_FSM.vhd"
-vhdl work "C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2RxTest\RxTest\rx_driver.vhd"
-vhdl work "C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2RxTest\RxTest\packet_cntl.vhd"
-vhdl work "C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2RxTest\RxTest\ftdi_driver.vhd"
-vhdl work "C:\Users\Kyle\Development\Senior Design\DLP-HS-FPGA2RxTest\RxTest\RxTest.vhd"

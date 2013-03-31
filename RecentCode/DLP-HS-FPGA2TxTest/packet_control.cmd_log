@@ -1,2 +1,0 @@
-vhdtdtfi -prj DLP-HS-FPGA2TxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/packet_control.vhi" -module packet_control -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work packet_control.vhd 
-vhdtdtfi -prj DLP-HS-FPGA2TxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/packet_control.vhi" -module packet_control -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work packet_control.vhd 

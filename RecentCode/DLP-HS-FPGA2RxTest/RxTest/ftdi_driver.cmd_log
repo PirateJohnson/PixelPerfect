@@ -1,1 +1,0 @@
-vhdtdtfi -prj RxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2RxTest/RxTest/ftdi_driver.vhi" -module ftdi_driver -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work ftdi_driver.vhd 

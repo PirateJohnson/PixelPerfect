@@ -1,1 +1,0 @@
-vhdtdtfi -prj DLP-HS-FPGA2TxTest -o "C:/Users/Kyle/Development/Senior Design/DLP-HS-FPGA2TxTest/fifo_reader.vhi" -module fifo_reader -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work fifo_reader.vhd 
