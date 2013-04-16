@@ -63,7 +63,7 @@
 			#sidebar {
 				border-top: 3px solid #99CC33;
 				border-right: 2px solid #99CC33;
-				height: 300px;
+				height: 350px;
 				width: 200px;
 				float: right;
 				margin-right: 120px;
@@ -96,6 +96,9 @@
 			<ul2>
 				<li2><a href="http://seniordesign.engr.uidaho.edu/2012-2013/pixelperfect/index.html"><font color="orange">Pixel Perfect	</font></a></li2> <BR><BR>
 				<li2><a href="http://www2.cs.uidaho.edu/~cs480c/"><font color="orange">BitBangerFF	</font></a></li2>
+				<BR><BR>	
+				<p>Other Useful Links</p>
+				<li2><a href="https://github.com/PirateJohnson/PixelPerfect"><font color="orange">GitHub Repository</font></a></li2>
 				<BR><BR>
 				<li2><a href="http://www.uidaho.edu/"><font color="orange">University of Idaho </font></a></li2>
 				<BR><BR>
