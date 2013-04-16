@@ -33,7 +33,10 @@
 #ifndef FTDI_INTERFACE_H
 #define	FTDI_INTERFACE_H
 
+#include "std_defs.h"
 #include <ftdi.h>
+
+//#include "ftd2xx.h"
 
 // the FTDI device parameter structure
 typedef struct
@@ -43,6 +46,12 @@ typedef struct
 	int					product_id;		// the Product ID of the ftdi device
 	unsigned int		baudrate;		// device baud rate
 	int					interface;		// the device interface channel to use
+
+	int					update_registers;		// flag to update
+	unsigned char		registers[ SSLAR_NUM_REGISTERS ];	// the device register values
+	// FTD2xx support
+	//FT_HANDLE			ft_handle;
+
 } _FTDI_DEVICE;
 
 
@@ -126,6 +135,11 @@ int close_ftdi_device( _FTDI_DEVICE* ftdi_device );
  */
 
 int load_ftdi_device_image_data( _FTDI_DEVICE* ftdi_device, char* image_data, int image_size );
+
+
+
+// TODO - add docs
+int update_device_registers( _FTDI_DEVICE* ftdi_device, int defaults );
 
 #endif	/* FTDI_INTERFACE_H */
 

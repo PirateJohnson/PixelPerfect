@@ -1,1 +1,1 @@
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", MODE="0666", OWNER="halb"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", MODE="0666", OWNER="www-data"

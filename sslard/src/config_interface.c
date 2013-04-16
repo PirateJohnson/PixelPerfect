@@ -28,6 +28,7 @@
 #include <stdio.h>
 #include <libconfig.h>
 #include <libdaemon/dlog.h>
+#include <string.h>
 #include "../include/config_interface.h"
 #include "../include/std_defs.h"
 
@@ -167,8 +168,8 @@ int load_device_configuration( _DEVICE_CONFIG* dev_config, const char* config_fi
 	daemon_log( LOG_INFO, "%s : %s : image width: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->image_width );
 	daemon_log( LOG_INFO, "%s : %s : image height: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->image_height );
 	daemon_log( LOG_INFO, "%s : %s : pixel depth: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->pixel_depth );
-	daemon_log( LOG_INFO, "%s : %s : Vendor ID: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->vendor_id );
-	daemon_log( LOG_INFO, "%s : %s : Product ID: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->product_id );
+	daemon_log( LOG_INFO, "%s : %s : Vendor ID: %x", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->vendor_id );
+	daemon_log( LOG_INFO, "%s : %s : Product ID: %x", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->product_id );
 	daemon_log( LOG_INFO, "%s : %s : Baudrate: %u", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->baudrate );
 	daemon_log( LOG_INFO, "%s : %s : Interface: %d", CONFIG_LOG_PREFIX, LOG_DEBUGS, dev_config->interface );
 #endif
@@ -181,5 +182,115 @@ int load_device_configuration( _DEVICE_CONFIG* dev_config, const char* config_fi
 		return CONFIG_FAIL;
 	}
 	
+	return CONFIG_PASS;
+}
+
+
+// TODO - error check/msg
+int write_new_train_file( const char* name )
+{
+	//int ret = -1;
+	FILE* fp = NULL;
+	char tmp[256] = { 0 };
+	
+	strcpy( tmp, name );
+	
+	strcat( tmp, "\n" );
+	
+	fp = fopen( DAEMON_TRAIN_FILE, "w+" );
+	
+	(void)  fprintf( fp, name );
+	
+	fclose( fp );
+	fp = NULL;
+	
+	return CONFIG_PASS;
+}
+
+int read_new_train_file( char* name_storage )
+{
+	//int ret = -1;
+	FILE* fp = NULL;
+	char tmp[256] = { 0 };
+	
+	fp = fopen( DAEMON_TRAIN_FILE, "r+" );
+	
+	(void) fgets( tmp, 256, fp );
+	
+	fclose( fp );
+	fp = NULL;
+	
+	if( strlen( tmp ) > 1 )
+	{
+		strcpy( name_storage, tmp );
+	}
+	else
+		name_storage[0] = '\0';
+	
+	return CONFIG_PASS;
+}
+
+
+
+// TODO - add docs
+int load_new_register_values( _DEVICE_CONFIG* config, const char* config_file, char* registers )
+{
+	config_t _config;                               // the libconfig structure
+	int tmp_i = 0;									// temp storage
+	const char* _file = config_file;                // the config file location
+    int i;
+	
+	// check the pointer if debugging
+#ifdef DEBUG_PRINT
+	daemon_log( LOG_INFO, "%s : %s : loading new register configuration file", CONFIG_LOG_PREFIX, LOG_DEBUGS );
+	if( !dev_config )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to load registers, device_config pointer is null", CONFIG_LOG_PREFIX, LOG_ERROR );
+		return CONFIG_FAIL;
+	}
+#endif
+	
+	//SSLAR_NUM_REGISTERS
+	// if the filename was null, use the default configuration file
+	if( !_file )
+	{
+		daemon_log( LOG_INFO, "%s : %s : supplied config_file parameter is null, using the default config file: %s", CONFIG_LOG_PREFIX, LOG_WARN, DEVICE_REGISTER_FILE );
+		_file = DEVICE_CONFIG_FILE;
+	}
+	
+	config_init( &_config );                // init the libconfig structure
+
+	// read the config file, print and return if failed
+	if( !config_read_file( &_config, _file ) )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to read the configuration file: %s", CONFIG_LOG_PREFIX, LOG_ERROR, _file );
+		
+		// verbose if debugging
+#ifdef DEBUG_PRINT
+		// use this to get error details from libconfig if needed
+		daemon_log( LOG_INFO, "%s : %s : libconfig returned: %s : %d - %s", CONFIG_LOG_PREFIX, LOG_ERROR, 
+				config_error_file(&_config), config_error_line(&_config), config_error_text(&_config) );
+#endif
+		
+		config_destroy( &_config );	// destroy the config structure
+		return CONFIG_FAIL;
+	}
+        
+	// get the register values
+	for( i = 0; i < SSLAR_NUM_REGISTERS; i++ )
+	{
+		// look up the register values
+		if( !config_lookup_int( &_config, REG_LOOKUP[i], &tmp_i ) )
+		{
+			daemon_log( LOG_INFO, "%s : %s : failed to read the configuration parameter: %s", CONFIG_LOG_PREFIX, LOG_ERROR, REG_LOOKUP[i] );
+			config_destroy( &_config );	// destroy the config structure
+			return CONFIG_FAIL;
+		}
+		else		// fill the structure element
+			registers[i] = (unsigned char) tmp_i;
+
+		tmp_i = 0;
+	
+	}
 	return CONFIG_PASS;
 }

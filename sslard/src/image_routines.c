@@ -43,6 +43,7 @@ int load_new_image( IplImage** image , int width, int height )
 {
 #ifdef DEBUG_PRINT
 	daemon_log( LOG_INFO, "%s : %s : loading new OpenCV image - width: %d - height: %d", IMAGE_LOG_PREFIX, LOG_DEBUGS, width, height );
+		
 #endif
 	
 	// create the OpenCV image
@@ -51,8 +52,7 @@ int load_new_image( IplImage** image , int width, int height )
 			IPL_DEPTH_8U,													// pixel depth
 			1																// channels
 			);
-	
-
+		
 	return IMAGE_PASS;
 }
 
@@ -60,7 +60,7 @@ int load_new_image( IplImage** image , int width, int height )
 int release_image( IplImage** image )
 {
 #ifdef DEBUG_PRINT
-	daemon_log( LOG_INFO, "%s : %s : releasing image data", IMAGE_LOG_PREFIX, LOG_DEBUGS );
+	daemon_log( LOG_INFO, "%s : %s : releasing image data", IMAGE_LOG_PREFIX, LOG_DEBUGS );	
 #endif
 	// release the OpenCV image data
 	cvReleaseImage( image );
@@ -142,6 +142,10 @@ int save_image_to_current( IplImage** image )
 		return IMAGE_FAIL;
 	}
 	
+	// TESTING - do a system call on image-current
+	//system( "/bin/chown halb:www-data /opt/sslard/current-image.jpg" );
+	
+	
 #ifdef DEBUG_PRINT
 	daemon_log( LOG_INFO, "%s : %s : releasing the current image lock file", IMAGE_LOG_PREFIX, LOG_DEBUGS );
 #endif
@@ -163,6 +167,181 @@ int save_image_to_current( IplImage** image )
 		daemon_log( LOG_INFO, "%s : %s : failed to save image data, failed to close the lock file: %s", IMAGE_LOG_PREFIX, LOG_ERROR, DAEMON_IMAGE_LOCKFILE );
 		return IMAGE_FAIL;
 	}
+	
+	return IMAGE_PASS;
+}
+
+
+
+int init_display_device( _DISPLAY_DEV* display_dev )
+{
+	daemon_log( LOG_INFO, "%s : %s : initializing display device", IMAGE_LOG_PREFIX, LOG_INFOS );
+	
+#ifdef DEBUG_PRINT
+	if( !display_dev )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to initialize display device, display_dev pointer is null", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+#endif
+		
+	IplImage* tmp = NULL;
+	
+	// hook up to camera 0
+	display_dev->camera = cvCaptureFromCAM( 0 );
+	
+	// check for failure
+	if( !display_dev->camera )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to initialize display device, failed to capture from camera 0", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+	
+	
+	// Try to set the cam resolution
+	cvSetCaptureProperty( display_dev->camera, CV_CAP_PROP_FRAME_WIDTH, 320 );
+	cvSetCaptureProperty( display_dev->camera, CV_CAP_PROP_FRAME_HEIGHT, 240 );
+	
+	sleep(1);
+	
+	// get the first frame, to make sure the cam is initialized
+	tmp = cvQueryFrame( display_dev->camera );
+	
+	// check for failure
+	if( !tmp )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to initialize display device, failed to capture test image from camera 0", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+	
+	daemon_log( LOG_INFO, "%s : %s : successfully initialized display device 0", IMAGE_LOG_PREFIX, LOG_INFOS );
+	
+	return IMAGE_PASS;
+}
+
+
+int release_display_device( _DISPLAY_DEV* display_dev )
+{
+	daemon_log( LOG_INFO, "%s : %s : releasing display device", IMAGE_LOG_PREFIX, LOG_INFOS );
+	
+#ifdef DEBUG_PRINT
+	if( !display_dev )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to release display device, display_dev pointer is null", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+#endif
+	
+	// release the device
+	cvReleaseCapture( &display_dev->camera );
+	
+	// de-reference
+	display_dev->camera = NULL;
+	
+	return IMAGE_PASS;
+}
+
+
+int show_image_to_window( _DISPLAY_DEV* display_dev, IplImage* image )
+{		
+#ifdef DEBUG_PRINT
+	daemon_log( LOG_INFO, "%s : %s : displaying image to window", IMAGE_LOG_PREFIX, LOG_DEBUGS );
+	
+	if( !display_dev )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to display image to window, display_dev pointer is null", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+#endif
+	
+	// show the image in the window
+	cvShowImage( OUTPUT_DISPLAY_WIN, image );
+	
+	
+	// let OpenCV process its task
+	(void) cvWaitKey(1);
+	
+	return IMAGE_PASS;
+}
+
+
+
+int get_image_from_display_device( _DISPLAY_DEV* display_dev, IplImage** cam_image )
+{	
+#ifdef DEBUG_PRINT
+	daemon_log( LOG_INFO, "%s : %s : retrieving image from display device", IMAGE_LOG_PREFIX, LOG_DEBUGS );
+	
+	if( !display_dev )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to retrieve image from display device, display_dev pointer is null", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+#endif
+	
+	IplImage* frame = NULL;
+	IplImage* tmp_img = NULL;
+	
+	// get the image
+	frame = cvQueryFrame( display_dev->camera );
+	
+	// check for failure
+	if( !frame )
+	{
+		daemon_log( LOG_INFO, "%s : %s : failed to retrieve image from display device, failed to capture image from camera 0", IMAGE_LOG_PREFIX, LOG_ERROR );
+		return IMAGE_FAIL;
+	}
+	
+	
+	// convert to gray scale and copy device image since we cannot modify it
+	if( frame->nChannels == 3 )
+	{
+		// create a new image
+		tmp_img = cvCreateImage( cvGetSize( frame ), IPL_DEPTH_8U, 1 );
+		
+		// convert old to new
+		cvCvtColor( frame, tmp_img, CV_BGR2GRAY );
+	}
+	else
+	{
+		// else src is already gray scale
+		tmp_img =  cvCloneImage( frame );
+	}
+	
+	// move frame pointer, de-reference device image data
+	frame = tmp_img;
+	tmp_img = NULL;
+	
+	// resize to FACE_WIDTH and FACE_HEIGHT, which map to actual pixel resolution
+	
+	// scale the image to the new dimensions, even if the aspect ratio will be changed
+	tmp_img = cvCreateImage( cvSize( FACE_WIDTH, FACE_HEIGHT ), frame->depth, frame->nChannels );
+	
+	
+	if( FACE_WIDTH > frame->width && FACE_HEIGHT > frame->height )
+	{
+		// make the image larger
+		cvResetImageROI( (IplImage*) frame );
+		cvResize( frame, tmp_img, CV_INTER_LINEAR );	// CV_INTER_CUBIC or CV_INTER_LINEAR is good for enlarging
+	}
+	else
+	{
+		// make the image smaller
+		cvResetImageROI( (IplImage*) frame );
+		cvResize( frame, tmp_img, CV_INTER_AREA );	// CV_INTER_AREA is good for shrinking / decimation, but bad at enlarging.
+	}
+	
+	/* ASSUMING user passes image that is of correct size/etc, just copy data
+	// make sure user data is null
+	if( (*cam_image) != NULL )
+	{
+		cvReleaseImage( cam_image );
+		(*cam_image) = NULL;
+	}
+	
+	(*cam_image) = tmp_img;
+	*/
+	
+	cvCopyImage( tmp_img, (*cam_image) );
 	
 	return IMAGE_PASS;
 }

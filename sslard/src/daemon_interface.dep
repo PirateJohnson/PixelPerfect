@@ -1,3 +1,4 @@
 daemon_interface.o: src/daemon_interface.c src/../include/std_defs.h \
  src/../include/config_interface.h src/../include/image_routines.h \
- src/../include/ftdi_interface.h src/../include/daemon_interface.h
+ src/../include/ftdi_interface.h src/../include/std_defs.h \
+ src/../include/daemon_interface.h src/../include/image_processing.h

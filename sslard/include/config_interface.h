@@ -40,6 +40,12 @@ typedef struct
 	int					interface;		// the device interface channel to use
 } _DEVICE_CONFIG;
 
+// TODO - doc new methods
+
+int write_new_train_file( const char* name );
+
+int read_new_train_file( char* name_storage );
+
 
 /*------------------------------------------------------------------------------
  *	\description		This function reads and loads a calibration configuration
@@ -70,6 +76,11 @@ typedef struct
  */
 
 int load_device_configuration( _DEVICE_CONFIG* config, const char* config_file );
+
+
+
+// TODO - add docs
+int load_new_register_values( _DEVICE_CONFIG* config, const char* config_file, char* registers );
 
 #endif	/* CONFIG_INTERFACE_H */
 
