@@ -376,13 +376,15 @@ int daemonize_init( const char command, int* status )
 		}
 			
 		
+		// NOTE - this version is for usb webcam only
+		/*
 		// open the ftdi device		
 		if( open_ftdi_device( &ftdi_device, dev_config.vendor_id, dev_config.product_id, dev_config.baudrate, dev_config.interface ) == FTDI_FAIL )
 		{
             daemon_retval_send(6);
             goto finish;
 		}
-		
+		*/
 		
 		// init the face db, detection, and recognition system
 		if( initialize_vision_module( &vision_mod ) == VISION_FAIL )
@@ -392,18 +394,12 @@ int daemonize_init( const char command, int* status )
 		}
 		
 		
-		// could grab from a USB web cam with this instead of the FTDI device for testing
-		// TESTING **************************************************************************************************
 		// init display/cam dev
-		/*
 		if( init_display_device( &display_dev ) == IMAGE_FAIL )
 		{
 			daemon_retval_send(8);
             goto finish;
-		}
-		*/
-		// TESTING **************************************************************************************************
-		
+		}		
 		
         // send OK to parent process
         daemon_retval_send(0);
@@ -427,7 +423,8 @@ int daemonize_init( const char command, int* status )
 			int found_face = 0;
 			int rec_face = 0;
 			
-			
+			// NOTE - this version is for usb webcam only
+			/*
 			// if an update has been posted, handle it
 			if( ftdi_device.update_registers )
 			{
@@ -447,23 +444,23 @@ int daemonize_init( const char command, int* status )
 				// clear the flag
 				ftdi_device.update_registers = 0;
 			}
+			*/
 			
-			
+			// NOTE - this version is for usb webcam only
+			/*
 			// grab device image data
 			if( load_ftdi_device_image_data( &ftdi_device, output_image->imageData, output_image->imageSize ) == FTDI_FAIL )
 			{
 				daemon_log( LOG_INFO, "%s : %s : failed to load FTDI device image data", DAEMON_LOG_PREFIX, LOG_ERROR );
 			}
+			*/
 			
-			
-			// this grabs image data from /dev/video0		
-			/*
+			// grab image data from /dev/video0
 			if( get_image_from_display_device( &display_dev, &output_image ) == IMAGE_FAIL )
 			{
 				daemon_log( LOG_INFO, "%s : %s : failed to get device image data", DAEMON_LOG_PREFIX, LOG_ERROR );
 			}
-			*/
-			
+						
 			
 			if( detect_face( &vision_mod, output_image, &found_face) == VISION_FAIL )
 			{
@@ -479,9 +476,8 @@ int daemonize_init( const char command, int* status )
 				}
 			}			
 			
-			// TESTING - change when adding facedb
+			
 			// save the new image data to the current image file
-			//if( save_image_to_current( &output_image ) == IMAGE_FAIL )
 			if( save_image_to_current( &vision_mod.processed_face_img ) == IMAGE_FAIL )	
 			{
 				daemon_log( LOG_INFO, "%s : %s : failed to save device image data", DAEMON_LOG_PREFIX, LOG_ERROR );
@@ -520,13 +516,14 @@ int daemonize_init( const char command, int* status )
                         //daemon_log( LOG_WARNING, "Got SIGINT: %d, SIGQUIT: %d or SIGTERM: %d :> %d", SIGINT, SIGQUIT, SIGTERM, sig );						
                         quit = 1;
 						
-						
+						// NOTE - this version is for usb webcam only
+						/*
 						// close the ftdi device
 						if( close_ftdi_device( &ftdi_device ) == FTDI_FAIL )
 						{
 							daemon_log( LOG_INFO, "%s : %s : failed to close the FTDI device", DAEMON_LOG_PREFIX, LOG_ERROR );
 						}
-						
+						*/
 						
 						// release the data just allocated
 						if( release_image( &output_image ) == IMAGE_FAIL )
@@ -540,17 +537,11 @@ int daemonize_init( const char command, int* status )
 							daemon_log( LOG_INFO, "%s : %s : failed to release vision module", DAEMON_LOG_PREFIX, LOG_ERROR );
 						}
 						
-						// release web cam if using it
-						// TESTING **************************************************************************************************
 						// release display/cam
-						/*
 						if( release_display_device( &display_dev ) == IMAGE_FAIL )
 						{
 							daemon_log( LOG_INFO, "%s : %s : failed to release display device", DAEMON_LOG_PREFIX, LOG_ERROR );
 						}
-						*/
-						// TESTING **************************************************************************************************
-						
 						
                         break;
 
